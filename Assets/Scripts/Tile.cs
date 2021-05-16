@@ -6,10 +6,10 @@ public class Tile : MonoBehaviour
 {
     public string Name;
 
-    public enum Types { Property, Draw, Tax, Go, VisitingJail, InJail, GoToJail, Free };
+    public enum Types { Property, Railroad, Utility, Draw, Tax, Go, VisitingJail, InJail, GoToJail, Free };
     public Types Type;
 
-    //used if property
+    //used if property (RR and Utility use Purchase Price
     private GameObject Owner = null;
     public int PurchasePrice = 0;
     public int HousePrice = 0;

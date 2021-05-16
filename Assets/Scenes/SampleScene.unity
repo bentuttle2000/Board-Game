@@ -121,6 +121,61 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &14466703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 14466704}
+  - component: {fileID: 14466705}
+  m_Layer: 0
+  m_Name: Utility2
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &14466704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14466703}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 28
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &14466705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14466703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Utility 2
+  Type: 2
+  PurchasePrice: 150
+  HousePrice: 0
+  RentPrice: 0
+  HousePrices: 00000000000000000000000000000000
+  HotelPrice: 0
+  ColorSet:
+  - {fileID: 409810116}
+  - {fileID: 14466703}
+  DrawType: 2
+  TaxPrice: 0
 --- !u!1 &88496959
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +205,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2000631699}
-  m_RootOrder: 9
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &88496961
 MonoBehaviour:
@@ -174,6 +229,62 @@ MonoBehaviour:
   ColorSet: []
   DrawType: 2
   TaxPrice: 200
+--- !u!1 &101183050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 101183051}
+  - component: {fileID: 101183052}
+  m_Layer: 0
+  m_Name: Green3
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &101183051
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101183050}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 34
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &101183052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101183050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Green 3
+  Type: 0
+  PurchasePrice: 320
+  HousePrice: 200
+  RentPrice: 28
+  HousePrices: 96000000c2010000e8030000b0040000
+  HotelPrice: 1400
+  ColorSet:
+  - {fileID: 1319286363}
+  - {fileID: 926924263}
+  - {fileID: 101183050}
+  DrawType: 2
+  TaxPrice: 0
 --- !u!1 &114166287
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +314,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2000631699}
-  m_RootOrder: 5
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114166289
 MonoBehaviour:
@@ -227,6 +338,61 @@ MonoBehaviour:
   ColorSet: []
   DrawType: 1
   TaxPrice: 0
+--- !u!1 &121341324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 121341326}
+  - component: {fileID: 121341325}
+  m_Layer: 0
+  m_Name: DBlue1
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &121341325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121341324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: DBlue 1
+  Type: 0
+  PurchasePrice: 350
+  HousePrice: 200
+  RentPrice: 35
+  HousePrices: af000000f40100004c04000014050000
+  HotelPrice: 1500
+  ColorSet:
+  - {fileID: 121341324}
+  - {fileID: 644157116}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!4 &121341326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121341324}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 37
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &142920234
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +422,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2000631699}
-  m_RootOrder: 4
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &142920236
 MonoBehaviour:
@@ -280,6 +446,283 @@ MonoBehaviour:
   ColorSet: []
   DrawType: 1
   TaxPrice: 0
+--- !u!1 &208104322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 208104323}
+  - component: {fileID: 208104324}
+  m_Layer: 0
+  m_Name: GoToJail
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &208104323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208104322}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &208104324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208104322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Go To Jail
+  Type: 6
+  PurchasePrice: 0
+  HousePrice: 0
+  RentPrice: 0
+  HousePrices: 00000000000000000000000000000000
+  HotelPrice: 0
+  ColorSet: []
+  DrawType: 2
+  TaxPrice: 0
+--- !u!1 &258924510
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 258924512}
+  - component: {fileID: 258924511}
+  m_Layer: 0
+  m_Name: Railroad1
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &258924511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258924510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Railroad 1
+  Type: 1
+  PurchasePrice: 200
+  HousePrice: 0
+  RentPrice: 0
+  HousePrices: 00000000000000000000000000000000
+  HotelPrice: 0
+  ColorSet:
+  - {fileID: 258924510}
+  - {fileID: 800728873}
+  - {fileID: 1307918408}
+  - {fileID: 1016319650}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!4 &258924512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258924510}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &260737698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 260737700}
+  - component: {fileID: 260737699}
+  m_Layer: 0
+  m_Name: Yellow1
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &260737699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260737698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Yellow 1
+  Type: 0
+  PurchasePrice: 260
+  HousePrice: 150
+  RentPrice: 22
+  HousePrices: 6e0000004a01000020030000cf030000
+  HotelPrice: 1150
+  ColorSet:
+  - {fileID: 260737698}
+  - {fileID: 1540063484}
+  - {fileID: 683399715}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!4 &260737700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260737698}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &381978392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 381978394}
+  - component: {fileID: 381978393}
+  m_Layer: 0
+  m_Name: Red1
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &381978393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381978392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Red 1
+  Type: 0
+  PurchasePrice: 220
+  HousePrice: 150
+  RentPrice: 18
+  HousePrices: 5a000000fa000000bc0200006b030000
+  HotelPrice: 1050
+  ColorSet:
+  - {fileID: 381978392}
+  - {fileID: 1290354631}
+  - {fileID: 1599617965}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!4 &381978394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381978392}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &409810116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 409810118}
+  - component: {fileID: 409810117}
+  m_Layer: 0
+  m_Name: Utility1
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &409810117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409810116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Utility 1
+  Type: 2
+  PurchasePrice: 150
+  HousePrice: 0
+  RentPrice: 0
+  HousePrices: 00000000000000000000000000000000
+  HotelPrice: 0
+  ColorSet:
+  - {fileID: 409810116}
+  - {fileID: 14466703}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!4 &409810118
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409810116}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &423948333
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +776,62 @@ MonoBehaviour:
   ColorSet: []
   DrawType: 1
   TaxPrice: 0
+--- !u!1 &451509056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 451509058}
+  - component: {fileID: 451509057}
+  m_Layer: 0
+  m_Name: LBlue2
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &451509057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451509056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: LBlue 2
+  Type: 0
+  PurchasePrice: 100
+  HousePrice: 50
+  RentPrice: 6
+  HousePrices: 1e0000005a0000000e01000090010000
+  HotelPrice: 550
+  ColorSet:
+  - {fileID: 540263934}
+  - {fileID: 451509056}
+  - {fileID: 1309607468}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!4 &451509058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451509056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +915,173 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &540263934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 540263936}
+  - component: {fileID: 540263935}
+  m_Layer: 0
+  m_Name: LBlue1
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &540263935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540263934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: LBlue 1
+  Type: 0
+  PurchasePrice: 100
+  HousePrice: 50
+  RentPrice: 6
+  HousePrices: 1e0000005a0000000e01000090010000
+  HotelPrice: 550
+  ColorSet:
+  - {fileID: 540263934}
+  - {fileID: 451509056}
+  - {fileID: 1309607468}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!4 &540263936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540263934}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &644157116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 644157117}
+  - component: {fileID: 644157118}
+  m_Layer: 0
+  m_Name: DBlue2
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &644157117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644157116}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 39
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &644157118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644157116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: DBlue 2
+  Type: 0
+  PurchasePrice: 400
+  HousePrice: 200
+  RentPrice: 50
+  HousePrices: c80000005802000078050000a4060000
+  HotelPrice: 2000
+  ColorSet:
+  - {fileID: 121341324}
+  - {fileID: 644157116}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!1 &683399715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 683399716}
+  - component: {fileID: 683399717}
+  m_Layer: 0
+  m_Name: Yellow3
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &683399716
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683399715}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 29
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &683399717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683399715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Yellow 3
+  Type: 0
+  PurchasePrice: 280
+  HousePrice: 150
+  RentPrice: 24
+  HousePrices: 78000000680100005203000001040000
+  HotelPrice: 1200
+  ColorSet:
+  - {fileID: 260737698}
+  - {fileID: 1540063484}
+  - {fileID: 683399715}
+  DrawType: 2
+  TaxPrice: 0
 --- !u!1 &728842950
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +1111,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2000631699}
-  m_RootOrder: 10
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &728842952
 MonoBehaviour:
@@ -469,6 +1135,119 @@ MonoBehaviour:
   ColorSet: []
   DrawType: 2
   TaxPrice: 100
+--- !u!1 &795023591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 795023592}
+  - component: {fileID: 795023593}
+  m_Layer: 0
+  m_Name: Orange3
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &795023592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795023591}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &795023593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795023591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Orange 3
+  Type: 0
+  PurchasePrice: 200
+  HousePrice: 100
+  RentPrice: 16
+  HousePrices: 50000000dc0000005802000020030000
+  HotelPrice: 1000
+  ColorSet:
+  - {fileID: 2110168315}
+  - {fileID: 982020962}
+  - {fileID: 795023591}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!1 &800728873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 800728875}
+  - component: {fileID: 800728874}
+  m_Layer: 0
+  m_Name: Railroad2
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &800728874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800728873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Railroad 1
+  Type: 1
+  PurchasePrice: 200
+  HousePrice: 0
+  RentPrice: 0
+  HousePrices: 00000000000000000000000000000000
+  HotelPrice: 0
+  ColorSet:
+  - {fileID: 258924510}
+  - {fileID: 800728873}
+  - {fileID: 1307918408}
+  - {fileID: 1016319650}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!4 &800728875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800728873}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &807912331
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,6 +1343,175 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 
+--- !u!1 &926924263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 926924265}
+  - component: {fileID: 926924264}
+  m_Layer: 0
+  m_Name: Green2
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &926924264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926924263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Green 2
+  Type: 0
+  PurchasePrice: 3
+  HousePrice: 200
+  RentPrice: 26
+  HousePrices: 8200000086010000840300004c040000
+  HotelPrice: 1275
+  ColorSet:
+  - {fileID: 1319286363}
+  - {fileID: 926924263}
+  - {fileID: 101183050}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!4 &926924265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926924263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 32
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &982020962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 982020964}
+  - component: {fileID: 982020963}
+  m_Layer: 0
+  m_Name: Orange2
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &982020963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982020962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Orange 2
+  Type: 0
+  PurchasePrice: 180
+  HousePrice: 100
+  RentPrice: 14
+  HousePrices: 46000000c800000026020000ee020000
+  HotelPrice: 950
+  ColorSet:
+  - {fileID: 2110168315}
+  - {fileID: 982020962}
+  - {fileID: 795023591}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!4 &982020964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982020962}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1016319650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1016319651}
+  - component: {fileID: 1016319652}
+  m_Layer: 0
+  m_Name: Railroad4
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1016319651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016319650}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 35
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1016319652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016319650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Railroad 1
+  Type: 1
+  PurchasePrice: 200
+  HousePrice: 0
+  RentPrice: 0
+  HousePrices: 00000000000000000000000000000000
+  HotelPrice: 0
+  ColorSet:
+  - {fileID: 258924510}
+  - {fileID: 800728873}
+  - {fileID: 1307918408}
+  - {fileID: 1016319650}
+  DrawType: 2
+  TaxPrice: 0
 --- !u!1 &1111228425
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,6 +1622,231 @@ MonoBehaviour:
   - {fileID: 1146875371}
   DrawType: 2
   TaxPrice: 0
+--- !u!1 &1290354631
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1290354633}
+  - component: {fileID: 1290354632}
+  m_Layer: 0
+  m_Name: Red2
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1290354632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290354631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Red 2
+  Type: 0
+  PurchasePrice: 220
+  HousePrice: 150
+  RentPrice: 18
+  HousePrices: 5a000000fa000000bc0200006b030000
+  HotelPrice: 1050
+  ColorSet:
+  - {fileID: 381978392}
+  - {fileID: 1290354631}
+  - {fileID: 1599617965}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!4 &1290354633
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290354631}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1307918408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1307918410}
+  - component: {fileID: 1307918409}
+  m_Layer: 0
+  m_Name: Railroad3
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1307918409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307918408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Railroad 1
+  Type: 1
+  PurchasePrice: 200
+  HousePrice: 0
+  RentPrice: 0
+  HousePrices: 00000000000000000000000000000000
+  HotelPrice: 0
+  ColorSet:
+  - {fileID: 258924510}
+  - {fileID: 800728873}
+  - {fileID: 1307918408}
+  - {fileID: 1016319650}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!4 &1307918410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307918408}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1309607468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1309607469}
+  - component: {fileID: 1309607470}
+  m_Layer: 0
+  m_Name: LBlue3
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1309607469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309607468}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1309607470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309607468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: LBlue 3
+  Type: 0
+  PurchasePrice: 100
+  HousePrice: 50
+  RentPrice: 8
+  HousePrices: 28000000640000002c010000c2010000
+  HotelPrice: 600
+  ColorSet:
+  - {fileID: 540263934}
+  - {fileID: 451509056}
+  - {fileID: 1309607468}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!1 &1319286363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1319286365}
+  - component: {fileID: 1319286364}
+  m_Layer: 0
+  m_Name: Green1
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1319286364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319286363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Green 1
+  Type: 0
+  PurchasePrice: 300
+  HousePrice: 200
+  RentPrice: 26
+  HousePrices: 8200000086010000840300004c040000
+  HotelPrice: 1275
+  ColorSet:
+  - {fileID: 1319286363}
+  - {fileID: 926924263}
+  - {fileID: 101183050}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!4 &1319286365
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319286363}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1374474234
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,6 +1949,118 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1385911526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1385911528}
+  - component: {fileID: 1385911527}
+  m_Layer: 0
+  m_Name: Pink1
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1385911527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385911526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Pink 1
+  Type: 0
+  PurchasePrice: 140
+  HousePrice: 100
+  RentPrice: 10
+  HousePrices: 3200000096000000c201000071020000
+  HotelPrice: 750
+  ColorSet:
+  - {fileID: 1385911526}
+  - {fileID: 2020682496}
+  - {fileID: 1403366847}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!4 &1385911528
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385911526}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1403366847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1403366848}
+  - component: {fileID: 1403366849}
+  m_Layer: 0
+  m_Name: Pink3
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1403366848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403366847}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1403366849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403366847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Pink 3
+  Type: 0
+  PurchasePrice: 160
+  HousePrice: 100
+  RentPrice: 12
+  HousePrices: 3c000000b4000000f4010000bc020000
+  HotelPrice: 900
+  ColorSet:
+  - {fileID: 1385911526}
+  - {fileID: 2020682496}
+  - {fileID: 1403366847}
+  DrawType: 2
+  TaxPrice: 0
 --- !u!1 &1418265343
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,6 +2114,118 @@ MonoBehaviour:
   ColorSet: []
   DrawType: 2
   TaxPrice: 0
+--- !u!1 &1540063484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1540063486}
+  - component: {fileID: 1540063485}
+  m_Layer: 0
+  m_Name: Yellow2
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1540063485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540063484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Yellow 2
+  Type: 0
+  PurchasePrice: 260
+  HousePrice: 150
+  RentPrice: 22
+  HousePrices: 6e0000004a01000020030000cf030000
+  HotelPrice: 1150
+  ColorSet:
+  - {fileID: 260737698}
+  - {fileID: 1540063484}
+  - {fileID: 683399715}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!4 &1540063486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540063484}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1599617965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1599617966}
+  - component: {fileID: 1599617967}
+  m_Layer: 0
+  m_Name: Red3
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1599617966
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599617965}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1599617967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599617965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Red 3
+  Type: 0
+  PurchasePrice: 240
+  HousePrice: 150
+  RentPrice: 20
+  HousePrices: 640000002c010000ee0200009d030000
+  HotelPrice: 1100
+  ColorSet:
+  - {fileID: 381978392}
+  - {fileID: 1290354631}
+  - {fileID: 1599617965}
+  DrawType: 2
+  TaxPrice: 0
 --- !u!1 &1627638315
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,7 +2255,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2000631699}
-  m_RootOrder: 7
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1627638317
 MonoBehaviour:
@@ -881,6 +2278,112 @@ MonoBehaviour:
   HotelPrice: 0
   ColorSet: []
   DrawType: 0
+  TaxPrice: 0
+--- !u!1 &1816524974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1816524975}
+  - component: {fileID: 1816524976}
+  m_Layer: 0
+  m_Name: InJail
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1816524975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816524974}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2100906816}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1816524976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816524974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: In Jail
+  Type: 5
+  PurchasePrice: 0
+  HousePrice: 0
+  RentPrice: 0
+  HousePrices: 00000000000000000000000000000000
+  HotelPrice: 0
+  ColorSet: []
+  DrawType: 2
+  TaxPrice: 0
+--- !u!1 &1862786360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1862786361}
+  - component: {fileID: 1862786362}
+  m_Layer: 0
+  m_Name: FreeParking
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1862786361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862786360}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1862786362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862786360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Free Parking
+  Type: 9
+  PurchasePrice: 0
+  HousePrice: 0
+  RentPrice: 0
+  HousePrices: 
+  HotelPrice: 0
+  ColorSet: []
+  DrawType: 2
   TaxPrice: 0
 --- !u!1 &1881337600
 GameObject:
@@ -911,7 +2414,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2000631699}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1881337602
 MonoBehaviour:
@@ -1017,15 +2520,100 @@ Transform:
   - {fileID: 1111228426}
   - {fileID: 423948334}
   - {fileID: 1146875372}
-  - {fileID: 142920235}
-  - {fileID: 114166288}
-  - {fileID: 1881337601}
-  - {fileID: 1627638316}
-  - {fileID: 2061894796}
   - {fileID: 88496960}
+  - {fileID: 258924512}
+  - {fileID: 540263936}
+  - {fileID: 1881337601}
+  - {fileID: 451509058}
+  - {fileID: 1309607469}
+  - {fileID: 2100906816}
+  - {fileID: 1385911528}
+  - {fileID: 409810118}
+  - {fileID: 2020682498}
+  - {fileID: 1403366848}
+  - {fileID: 800728875}
+  - {fileID: 2110168317}
+  - {fileID: 142920235}
+  - {fileID: 982020964}
+  - {fileID: 795023592}
+  - {fileID: 1862786361}
+  - {fileID: 381978394}
+  - {fileID: 1627638316}
+  - {fileID: 1290354633}
+  - {fileID: 1599617966}
+  - {fileID: 1307918410}
+  - {fileID: 260737700}
+  - {fileID: 1540063486}
+  - {fileID: 14466704}
+  - {fileID: 683399716}
+  - {fileID: 208104323}
+  - {fileID: 1319286365}
+  - {fileID: 926924265}
+  - {fileID: 114166288}
+  - {fileID: 101183051}
+  - {fileID: 1016319651}
+  - {fileID: 2061894796}
+  - {fileID: 121341326}
   - {fileID: 728842951}
+  - {fileID: 644157117}
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2020682496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2020682498}
+  - component: {fileID: 2020682497}
+  m_Layer: 0
+  m_Name: Pink2
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2020682497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020682496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Pink 2
+  Type: 0
+  PurchasePrice: 140
+  HousePrice: 100
+  RentPrice: 10
+  HousePrices: 3200000096000000c201000071020000
+  HotelPrice: 750
+  ColorSet:
+  - {fileID: 1385911526}
+  - {fileID: 2020682496}
+  - {fileID: 1403366847}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!4 &2020682498
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020682496}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2061894795
 GameObject:
@@ -1056,7 +2644,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2000631699}
-  m_RootOrder: 8
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2061894797
 MonoBehaviour:
@@ -1079,6 +2667,60 @@ MonoBehaviour:
   HotelPrice: 0
   ColorSet: []
   DrawType: 0
+  TaxPrice: 0
+--- !u!1 &2100906815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2100906816}
+  - component: {fileID: 2100906817}
+  m_Layer: 0
+  m_Name: VisitingJail
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2100906816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100906815}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1816524975}
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2100906817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100906815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Just Visiting
+  Type: 4
+  PurchasePrice: 0
+  HousePrice: 0
+  RentPrice: 0
+  HousePrices: 00000000000000000000000000000000
+  HotelPrice: 0
+  ColorSet: []
+  DrawType: 2
   TaxPrice: 0
 --- !u!1 &2109610634
 GameObject:
@@ -1124,6 +2766,62 @@ Transform:
   - {fileID: 2115775934}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2110168315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2110168317}
+  - component: {fileID: 2110168316}
+  m_Layer: 0
+  m_Name: Orange1
+  m_TagString: Go
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2110168316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110168315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1238881437c6d4a92868f85bb69db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Orange 1
+  Type: 0
+  PurchasePrice: 180
+  HousePrice: 100
+  RentPrice: 14
+  HousePrices: 46000000c800000026020000ee020000
+  HotelPrice: 950
+  ColorSet:
+  - {fileID: 2110168315}
+  - {fileID: 982020962}
+  - {fileID: 795023591}
+  DrawType: 2
+  TaxPrice: 0
+--- !u!4 &2110168317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110168315}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.01, y: -5.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2000631699}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2115775933
 GameObject:
