@@ -7,11 +7,12 @@ public class Dice : MonoBehaviour
     private int NumDoubles;
 
     public int Roll()
-    {
+    {   
         int Dice1 = Random.Range(1, 7); //returns random int 1-6 (the 7 is not inclusive)
         int Dice2 = Random.Range(1, 7);
-        print(Dice1);
-        print(Dice2);
+        transform.GetChild(0).GetComponent<Animator>().SetInteger("Dice", Dice1);
+        transform.GetChild(1).GetComponent<Animator>().SetInteger("Dice", Dice2);
+
         if (Dice1 == Dice2)
         {
             print("Doubles");
