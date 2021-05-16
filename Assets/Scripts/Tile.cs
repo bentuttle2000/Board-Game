@@ -35,6 +35,8 @@ public class Tile : MonoBehaviour
 
     public void LandedOn(GameObject Player)
     {
+        print("Landed on: " + Name);
+
         switch (Type)
         {
             case Types.Property:

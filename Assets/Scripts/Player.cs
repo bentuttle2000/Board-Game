@@ -44,7 +44,6 @@ public class Player : MonoBehaviour
     public void SetLocation(GameObject NewLocation)
     {
         Location = NewLocation;
-        Location.GetComponent<Tile>().LandedOn(gameObject);
     }
 
     public void Move()
@@ -75,27 +74,34 @@ public class Player : MonoBehaviour
         if (NewTile > NumTiles)
         {
             NewTile -= NumTiles;
-            //Pass Go Collect 200
-            PassGo();
-            print(Money);
+
         }
 
-        while (CurTile != NewTile)
-        {
+        StartCoroutine(Moving(.2f, CurTile, NumTiles, NewTile));
 
-            StartCoroutine(Moving(.5f, CurTile, NumTiles));
-        }
+
     }
 
-    IEnumerator Moving(float Sec, int CurTile, int NumTiles)
+    IEnumerator Moving(float Sec, int CurTile, int NumTiles, int NewTile)
     {
-        yield return new WaitForSecondsRealtime(Sec);
-        CurTile++;
-        if (CurTile > NumTiles)
+        while (CurTile != NewTile)
         {
-            CurTile -= NumTiles;
+            yield return new WaitForSecondsRealtime(Sec);
+            CurTile++;
+            if (CurTile > NumTiles)
+            {
+                CurTile -= NumTiles;
+                PassGo();
+            }
+            SetLocation(Board.transform.GetChild(CurTile).gameObject);
         }
-        SetLocation(Board.transform.GetChild(CurTile).gameObject);
+        yield return new WaitForSecondsRealtime(Sec);
+        PostMove();    
+    }
+
+    public void PostMove()
+    {
+        Location.GetComponent<Tile>().LandedOn(gameObject);
     }
 
     public int GetMoney()
