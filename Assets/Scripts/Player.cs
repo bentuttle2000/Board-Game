@@ -63,7 +63,6 @@ public class Player : MonoBehaviour
 
         for (int i = 0; i < NumTiles && CurTile < 0; i++)
         {
-            print("EE: " + Board.transform.GetChild(i));
             if (Board.transform.GetChild(i).gameObject == Location.gameObject)
             {
                 CurTile = i;

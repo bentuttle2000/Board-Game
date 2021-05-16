@@ -5,16 +5,20 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     public string Name;
-    
-    public enum Types { Property, Draw, Tax, Go, VisitingJail, InJail, GoToJail, Free };
+
+    public enum Types { Property, Railroad, Utility, Draw, Tax, Go, VisitingJail, InJail, GoToJail, Free };
     public Types Type;
 
-    //used if property
+    //used if property (RR and Utility use Purchase Price
     private GameObject Owner = null;
     public int PurchasePrice = 0;
     public int HousePrice = 0;
-    public int[] RentPrice = { 0 };
+    public int RentPrice;
+    public int[] HousePrices = {0, 0, 0, 0};
     private int NumHouses = 0;
+    public int HotelPrice = 0;
+    private int NumHotels = 0;
+    public GameObject[] ColorSet;
 
     //used if draw
     public enum DrawTypes { Chance, Chest, Not };
@@ -41,8 +45,7 @@ public class Tile : MonoBehaviour
                 else
                 {
                     //charge rent and give to owner
-                    int Price = RentPrice[NumHouses];
-                    Player.GetComponent<Player>().TakeMoney(Price);
+                    
                 }
                 break;
             case Types.Draw:
