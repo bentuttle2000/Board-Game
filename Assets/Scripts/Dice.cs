@@ -8,10 +8,12 @@ public class Dice : MonoBehaviour
 
     public int Roll()
     {
+
         int Dice1 = Random.Range(1, 7); //returns random int 1-6 (the 7 is not inclusive)
         int Dice2 = Random.Range(1, 7);
-        print(Dice1);
-        print(Dice2);
+
+        StartCoroutine(Wait(.2f, Dice1, Dice2));
+
         if (Dice1 == Dice2)
         {
             print("Doubles");
@@ -28,5 +30,16 @@ public class Dice : MonoBehaviour
     public void NewTurn()
     {
         NumDoubles = 0;
+    }
+
+    IEnumerator Wait(float Sec, int D1, int D2)
+    {
+        transform.GetChild(0).GetComponent<Animator>().SetInteger("Dice", 0);
+        yield return new WaitForSecondsRealtime(.1f);
+        transform.GetChild(1).GetComponent<Animator>().SetInteger("Dice", 0);
+
+        yield return new WaitForSecondsRealtime(Sec);
+        transform.GetChild(0).GetComponent<Animator>().SetInteger("Dice", D1);
+        transform.GetChild(1).GetComponent<Animator>().SetInteger("Dice", D2);
     }
 }

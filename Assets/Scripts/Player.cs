@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
 
     private GameObject Dice;
 
+    private int GoMoney = 200;
+
     private void Start()
     {
         Location = GameObject.FindGameObjectWithTag("Go");
@@ -20,7 +22,6 @@ public class Player : MonoBehaviour
         Board = GameObject.FindGameObjectWithTag("Board");
 
         Dice = GameObject.FindGameObjectWithTag("Dice");
-        
     }
 
     public void Update()
@@ -43,7 +44,6 @@ public class Player : MonoBehaviour
     public void SetLocation(GameObject NewLocation)
     {
         Location = NewLocation;
-        Location.GetComponent<Tile>().LandedOn(gameObject);
     }
 
     public void Move()
@@ -74,9 +74,34 @@ public class Player : MonoBehaviour
         if (NewTile > NumTiles)
         {
             NewTile -= NumTiles;
+
         }
 
-        SetLocation(Board.transform.GetChild(NewTile).gameObject);
+        StartCoroutine(Moving(.2f, CurTile, NumTiles, NewTile));
+
+
+    }
+
+    IEnumerator Moving(float Sec, int CurTile, int NumTiles, int NewTile)
+    {
+        while (CurTile != NewTile)
+        {
+            yield return new WaitForSecondsRealtime(Sec);
+            CurTile++;
+            if (CurTile > NumTiles)
+            {
+                CurTile -= NumTiles;
+                PassGo();
+            }
+            SetLocation(Board.transform.GetChild(CurTile).gameObject);
+        }
+        yield return new WaitForSecondsRealtime(Sec);
+        PostMove();    
+    }
+
+    public void PostMove()
+    {
+        Location.GetComponent<Tile>().LandedOn(gameObject);
     }
 
     public int GetMoney()
@@ -95,6 +120,11 @@ public class Player : MonoBehaviour
         {
             Money -= Amount;
         }
+    }
+
+    public void PassGo()
+    {
+        AddMoney(200);
     }
 
 }
