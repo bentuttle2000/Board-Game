@@ -40,31 +40,41 @@ public class Tile : MonoBehaviour
         switch (Type)
         {
             case Types.Property:
-                if (Owner != null)
+                if (Owner != null) //property is unowned
                 {
                     //offer to buy
                 }
-                else
+                else if (Owner != Player) //property is not owned by the player
                 {
                     //charge rent and give to owner
-                    
+                }
+                else //property is owned by the player
+                {
+                    //you are home
                 }
                 break;
             case Types.Draw:
+                if (DrawType == DrawTypes.Chance)
+                {
+                    //draw chance
+                }
+                else
+                {
+                    //draw community chest
+                }
                 break;
             case Types.Tax:
-                break;
-            case Types.Go:
-                break;
-            case Types.VisitingJail:
-                break;
-            case Types.InJail:
+                //charge player tax amount
                 break;
             case Types.GoToJail:
+                //send player to jail
                 break;
             case Types.Free:
+                //give player money on free parking
+                break;
+            default:
+                //do nothing on go and visiting jail
                 break;
         }
-
     }
 }

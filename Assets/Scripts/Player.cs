@@ -15,6 +15,10 @@ public class Player : MonoBehaviour
 
     private int GoMoney = 200;
 
+    private bool IsMoving = false;
+
+
+
     private void Start()
     {
         Location = GameObject.FindGameObjectWithTag("Go");
@@ -26,14 +30,12 @@ public class Player : MonoBehaviour
 
     public void Update()
     {
-        transform.position = new Vector3(Location.transform.position.x, Location.transform.position.y, -1);
+        transform.position = new Vector3(Location.transform.position.x, Location.transform.position.y, -1);    
 
-        //Move
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Move();
+            StartTurn();
         }
-        
     }
 
     public GameObject GetLocation()
@@ -46,14 +48,26 @@ public class Player : MonoBehaviour
         Location = NewLocation;
     }
 
+    public void StartTurn()
+    {
+        Dice.GetComponent<Dice>().NewTurn();
+    }
+
     public void Move()
     {
+        if (IsMoving)
+        {
+            return; //do not try to move if already moving
+        }
+
+        IsMoving = true;
 
         int NumSpaces = Dice.GetComponent<Dice>().Roll();
 
         if (NumSpaces == 0) //Roll returns 0 on 3rd double
         {
             //go to jail
+            return;
         }
 
 
@@ -79,7 +93,7 @@ public class Player : MonoBehaviour
 
         StartCoroutine(Moving(.2f, CurTile, NumTiles, NewTile));
 
-
+        return;
     }
 
     IEnumerator Moving(float Sec, int CurTile, int NumTiles, int NewTile)
@@ -102,6 +116,15 @@ public class Player : MonoBehaviour
     public void PostMove()
     {
         Location.GetComponent<Tile>().LandedOn(gameObject);
+        IsMoving = false;
+        if (Dice.GetComponent<Dice>().PlayAgain())
+        {
+            //show the roll button again
+        }
+        else
+        {
+            //move to end phase (aka enable menus for trading and buying houses)
+        }
     }
 
     public int GetMoney()
