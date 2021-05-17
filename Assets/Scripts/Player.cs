@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 
     private bool IsMoving = false;
 
+    private GameObject Players;
 
 
     private void Start()
@@ -26,16 +27,58 @@ public class Player : MonoBehaviour
         Board = GameObject.FindGameObjectWithTag("Board");
 
         Dice = GameObject.FindGameObjectWithTag("Dice");
+
+        Players = GameObject.FindGameObjectWithTag("Players");
+
+        StartTurn();
     }
 
     public void Update()
     {
-        transform.position = new Vector3(Location.transform.position.x, Location.transform.position.y, -1);    
+        UpdatePosition();
+    }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+    public void UpdatePosition()
+    {
+        float DX = 0, DY = 0;
+        int NumPlayers = Players.transform.childCount;
+        for (int i = 0; i < NumPlayers; i++)
         {
-            StartTurn();
+            if (Players.transform.GetChild(i).GetComponent<Player>().Name == Name)
+            {
+                switch (i)
+                {
+                    case 0:
+                        DX = 0;
+                        DY = .1f;
+                        break;
+                    case 1:
+                        DX = 0;
+                        DY = -.1f;
+                        break;
+                    case 2:
+                        DX = .1f;
+                        DY = 0;
+                        break;
+                    case 3:
+                        DX = -.1f;
+                        DY = 0;
+                        break;
+                    case 4:
+                        DX = .1f;
+                        DY = .1f;
+                        break;
+                    case 5:
+                        DX = -.1f;
+                        DY = -.1f;
+                        break;
+                }
+
+            }
         }
+
+        transform.position = new Vector3(Location.transform.position.x + DX, Location.transform.position.y + DY, -1);
+
     }
 
     public GameObject GetLocation()
@@ -50,7 +93,7 @@ public class Player : MonoBehaviour
 
     public void StartTurn()
     {
-        Dice.GetComponent<Dice>().NewTurn();
+        Dice.GetComponent<Dice>().NewTurn(gameObject);
     }
 
     public void Move()
@@ -70,8 +113,7 @@ public class Player : MonoBehaviour
             return;
         }
 
-
-        int NumTiles = Board.transform.childCount - 1;
+        int NumTiles = Board.transform.childCount;
 
         int CurTile = -1;
 
@@ -88,7 +130,6 @@ public class Player : MonoBehaviour
         if (NewTile > NumTiles)
         {
             NewTile -= NumTiles;
-
         }
 
         StartCoroutine(Moving(.2f, CurTile, NumTiles, NewTile));
@@ -102,7 +143,7 @@ public class Player : MonoBehaviour
         {
             yield return new WaitForSecondsRealtime(Sec);
             CurTile++;
-            if (CurTile > NumTiles)
+            if (CurTile >= NumTiles)
             {
                 CurTile -= NumTiles;
                 PassGo();
@@ -117,13 +158,34 @@ public class Player : MonoBehaviour
     {
         Location.GetComponent<Tile>().LandedOn(gameObject);
         IsMoving = false;
-        if (Dice.GetComponent<Dice>().PlayAgain())
-        {
-            //show the roll button again
-        }
-        else
+        if (!Dice.GetComponent<Dice>().PlayAgain())
         {
             //move to end phase (aka enable menus for trading and buying houses)
+            EndOfTurn();
+        }
+    }
+
+    public void EndOfTurn()
+    {
+        Dice.GetComponent<Dice>().EndOfTurn();
+    }
+
+    public void EndTurn()
+    {
+        int NumPlayers = Players.transform.childCount;
+        for (int i = 0; i < NumPlayers; i++)
+        {
+            if (Players.transform.GetChild(i).GetComponent<Player>().Name == Name)
+            {
+                //set next players turn (loop around if last player) 
+                int NextPlayer = i + 1;
+                if (NextPlayer == NumPlayers)
+                {
+                    NextPlayer = 0;
+                }
+                Players.transform.GetChild(NextPlayer).GetComponent<Player>().StartTurn();
+                return;
+            }
         }
     }
 
@@ -147,7 +209,7 @@ public class Player : MonoBehaviour
 
     public void PassGo()
     {
-        AddMoney(200);
+        AddMoney(GoMoney);
     }
 
 }
