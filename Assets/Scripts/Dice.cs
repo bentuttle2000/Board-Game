@@ -20,6 +20,8 @@ public class Dice : MonoBehaviour
     private GameObject MakePaymentTo;
     private int MakePaymentAmount;
 
+    private int MostRecentRoll;
+
     private void Start()
     {
         transform.GetChild(0).GetComponent<Animator>().SetInteger("Dice", 1);
@@ -32,6 +34,8 @@ public class Dice : MonoBehaviour
 
         int Dice1 = Random.Range(1, 7); //returns random int 1-6 (the 7 is not inclusive)
         int Dice2 = Random.Range(1, 7);
+
+        MostRecentRoll = Dice1 + Dice2;
 
         StartCoroutine(Wait(.2f, Dice1, Dice2));
 
@@ -125,54 +129,95 @@ public class Dice : MonoBehaviour
     public void OpenBuyPropertyMenu(GameObject Property)
     {
         BuyPropertyCanvas.gameObject.SetActive(true);
-        Vector4 TileColor = new Vector4(0, 0, 0, 1);
 
-        switch (Property.GetComponent<Tile>().Color)
+        switch (Property.GetComponent<Tile>().Type)
         {
-            case Tile.Colors.Brown:
-                TileColor = new Vector4(.7f, .25f, .05f, 1.0f);
+            case Tile.Types.Property:
+
+                Vector4 TileColor = new Vector4(0, 0, 0, 1);
+
+                switch (Property.GetComponent<Tile>().Color)
+                {
+                    case Tile.Colors.Brown:
+                        TileColor = new Vector4(.7f, .25f, .05f, 1.0f);
+                        break;
+                    case Tile.Colors.LBlue:
+                        TileColor = new Vector4(.5f, 1.0f, 1.0f, 1.0f);
+                        break;
+                    case Tile.Colors.Pink:
+                        TileColor = new Vector4(1.0f, 0f, .6f, 1.0f);
+                        break;
+                    case Tile.Colors.Orange:
+                        TileColor = new Vector4(1.0f, .5f, 0f, 1.0f);
+                        break;
+                    case Tile.Colors.Red:
+                        TileColor = new Vector4(1.0f, 0f, 0f, 1.0f);
+                        break;
+                    case Tile.Colors.Yellow:
+                        TileColor = new Vector4(1.0f, 1.0f, 0f, 1.0f);
+                        break;
+                    case Tile.Colors.Green:
+                        TileColor = new Vector4(0f, .7f, .1f, 1.0f);
+                        break;
+                    case Tile.Colors.DBlue:
+                        TileColor = new Vector4(0f, .05f, .9f, 1.0f);
+                        break;
+                }
+
+                BuyPropertyCanvas.transform.GetChild(0).GetChild(0).GetComponent<Image>().color = TileColor;
+
+                BuyPropertyCanvas.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>().text = "Rent: " + Property.GetComponent<Tile>().RentPrice.ToString();
+
+                string HousesText =
+                    "1 House:           " + Property.GetComponent<Tile>().HousePrices[0].ToString() +
+                    "\n2 House:           " + Property.GetComponent<Tile>().HousePrices[1].ToString() +
+                    "\n3 House:           " + Property.GetComponent<Tile>().HousePrices[2].ToString() +
+                    "\n4 House:           " + Property.GetComponent<Tile>().HousePrices[3].ToString()
+                    ;
+
+                BuyPropertyCanvas.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<Text>().text = HousesText;
+
                 break;
-            case Tile.Colors.LBlue:
-                TileColor = new Vector4(.5f, 1.0f, 1.0f, 1.0f);
+
+            case Tile.Types.Railroad:
+                BuyPropertyCanvas.transform.GetChild(0).GetChild(0).GetComponent<Image>().color = new Vector4(.5f, .5f, .5f, 1.0f);
+
+                BuyPropertyCanvas.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>().text = " ";
+
+                string TrainsText =
+                    "1 Train:           " + Property.GetComponent<Tile>().HousePrices[0].ToString() +
+                    "\n2 Train:           " + Property.GetComponent<Tile>().HousePrices[1].ToString() +
+                    "\n3 Train:           " + Property.GetComponent<Tile>().HousePrices[2].ToString() +
+                    "\n4 Train:           " + Property.GetComponent<Tile>().HousePrices[3].ToString()
+                    ;
+
+                BuyPropertyCanvas.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<Text>().text = TrainsText;
+
                 break;
-            case Tile.Colors.Pink:
-                TileColor = new Vector4(1.0f, 0f, .6f, 1.0f);
-                break;
-            case Tile.Colors.Orange:
-                TileColor = new Vector4(1.0f, .5f, 0f, 1.0f);
-                break;
-            case Tile.Colors.Red:
-                TileColor = new Vector4(1.0f, 0f, 0f, 1.0f);
-                break;
-            case Tile.Colors.Yellow:
-                TileColor = new Vector4(1.0f, 1.0f, 0f, 1.0f);
-                break;
-            case Tile.Colors.Green:
-                TileColor = new Vector4(0f, .7f, .1f, 1.0f);
-                break;
-            case Tile.Colors.DBlue:
-                TileColor = new Vector4(0f, .05f, .9f, 1.0f);
+            case Tile.Types.Utility:
+                BuyPropertyCanvas.transform.GetChild(0).GetChild(0).GetComponent<Image>().color = new Vector4(.5f, .5f, .5f, 1.0f);
+
+                BuyPropertyCanvas.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>().text = " ";
+
+                string UtilityText =
+                    "1 Utility:" +
+                    "\n         4x Dice Roll" +
+                    "\n2 Utility:" +
+                    "\n         10x Dice Roll"
+                    ;
+
+                BuyPropertyCanvas.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<Text>().text = UtilityText;
+
+
                 break;
         }
 
-        BuyPropertyCanvas.transform.GetChild(0).GetChild(0).GetComponent<Image>().color = TileColor;
-
         BuyPropertyCanvas.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Text>().text = Property.GetComponent<Tile>().Name;
-
-        BuyPropertyCanvas.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>().text = "Rent: " + Property.GetComponent<Tile>().RentPrice.ToString();
-
-        string HousesText =
-            "1 House:           " + Property.GetComponent<Tile>().HousePrices[0].ToString() +
-            "\n2 House:           " + Property.GetComponent<Tile>().HousePrices[1].ToString() +
-            "\n3 House:           " + Property.GetComponent<Tile>().HousePrices[2].ToString() +
-            "\n4 House:           " + Property.GetComponent<Tile>().HousePrices[3].ToString()
-            ;
-
-        BuyPropertyCanvas.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<Text>().text = HousesText;
 
         BuyPropertyCanvas.transform.GetChild(0).GetChild(1).GetChild(2).GetComponent<Text>().text = "Purchase: " + Property.GetComponent<Tile>().PurchasePrice.ToString();
 
         CurrentProperty = Property;
+
     }
 
     public void PurchaseProperty()
@@ -252,5 +297,10 @@ public class Dice : MonoBehaviour
     public void LeaveJailRoll()
     {
         PlayersTurn.GetComponent<Player>().GetOutOfJail();
+    }
+
+    public int GetRecentRoll()
+    {
+        return MostRecentRoll;
     }
 }
