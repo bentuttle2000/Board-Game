@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class Player : MonoBehaviour
 
         Players = GameObject.FindGameObjectWithTag("Players");
 
+        transform.GetChild(0).gameObject.SetActive(false);
+
         StartTurn();
     }
 
@@ -38,10 +41,7 @@ public class Player : MonoBehaviour
     {
         UpdatePosition();
 
-        if (Input.GetKeyDown(KeyCode.Space) && InJail)
-        {
-            GetOutOfJail();
-        }
+        UpdateDisplay();
     }
 
     public void UpdatePosition()
@@ -87,6 +87,12 @@ public class Player : MonoBehaviour
 
     }
 
+    public void UpdateDisplay()
+    {
+        transform.GetChild(0).GetChild(1).GetComponent<Text>().text = Name;
+        transform.GetChild(0).GetChild(2).GetComponent<Text>().text = "Money: " + Money;
+    }
+
     public GameObject GetLocation()
     {
         return Location;
@@ -100,6 +106,7 @@ public class Player : MonoBehaviour
     public void StartTurn()
     {
         Dice.GetComponent<Dice>().NewTurn(gameObject);
+        transform.GetChild(0).gameObject.SetActive(true);
     }
 
     public void Move()
@@ -183,6 +190,8 @@ public class Player : MonoBehaviour
 
     public void EndTurn()
     {
+        transform.GetChild(0).gameObject.SetActive(false);
+
         int NumPlayers = Players.transform.childCount;
         for (int i = 0; i < NumPlayers; i++)
         {
@@ -202,7 +211,6 @@ public class Player : MonoBehaviour
 
     public void SendToJail()
     {
-        print("Sending to jail");
         GameObject Jail = GameObject.FindGameObjectWithTag("InJail");
         SetLocation(Jail);
         InJail = true;
@@ -214,7 +222,6 @@ public class Player : MonoBehaviour
         GameObject Visiting = GameObject.FindGameObjectWithTag("VisitingJail");
         SetLocation(Visiting);
         InJail = false;
-
     }
 
     public bool IsInJail()
@@ -232,22 +239,27 @@ public class Player : MonoBehaviour
         Money += Amount;
     }
 
-    public void TakeMoney(int Amount)
+    public bool TakeMoney(int Amount)
     {
         if (Money >= Amount)
         {
             Money -= Amount;
+            return true;
         }
         else
         {
-            //player does ont have enough money, must manage properties or go bankrupt
+            //player does not have enough money, must manage properties or go bankrupt
             //load menu for not enough money
+            return false;
         }
     }
-    public void TaxMoney(int Amount)
+    public void ChargeMoney(int Amount)
     {
-        TakeMoney(Amount);
-        PostMove();  //move this later so player does not postmove until after money is taken
+        if (TakeMoney(Amount))
+        {
+            PostMove(); 
+        }
+        
     }
 
     public void PassGo()

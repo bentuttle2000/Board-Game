@@ -19,6 +19,8 @@ public class Tile : MonoBehaviour
     public int HotelPrice = 0;
     private int NumHotels = 0;
     public GameObject[] ColorSet;
+    public enum Colors { Brown, LBlue, Pink, Orange, Red, Yellow, Green, DBlue, Not };
+    public Colors Color = Colors.Not;
 
     //used if draw
     public enum DrawTypes { Chance, Chest, Not };
@@ -31,26 +33,61 @@ public class Tile : MonoBehaviour
     private int GoMoney = 200;
 
     //Used if Free parking
-    private int FreeParkingMoney = 0;
+    public int FreeParkingMoney = 0;
+
+    private GameObject Dice;
+
+    private void Start()
+    {
+        Dice = GameObject.FindGameObjectWithTag("Dice");
+    }
 
     public void LandedOn(GameObject Player)
     {
         switch (Type)
         {
             case Types.Property:
-                if (Owner != null) //property is unowned
+                if (Owner == null) //property is unowned
                 {
                     //offer to buy
+                    Dice.GetComponent<Dice>().OpenBuyPropertyMenu(this.gameObject);
                 }
                 else if (Owner != Player) //property is not owned by the player
                 {
+                    int ChargeAmount;
                     //charge rent and give to owner
+                    if (NumHouses == 0 && NumHotels == 0)
+                    {
+                        if (IsColorSetOwned(Owner))
+                        {
+                            //charge player double rent
+                            ChargeAmount = RentPrice * 2;
+                        }
+                        else
+                        {
+                            //charge player rent
+                            ChargeAmount = RentPrice;
+                        }
+                    }
+                    else if (NumHotels == 0)
+                    {
+                        //charge equal to HousePrices[NumHouses]
+                        ChargeAmount = HousePrices[NumHouses];
+                    }
+                    else //hotel
+                    {
+                        //charge equal to price of hotel
+                        ChargeAmount = HotelPrice;
+                    }
+
+                    //Charge player charge amount
+                    Dice.GetComponent<Dice>().ChargePlayerToPlayer(Player, Owner, ChargeAmount, Player.GetComponent<Player>().Name + " owes " + Owner.GetComponent<Player>().Name + " " + ChargeAmount + " for landing on " + Name);
                 }
                 else //property is owned by the player
                 {
-                    //you are home
+                    //you are home, do nothing
+                    Player.GetComponent<Player>().PostMove(); 
                 }
-                Player.GetComponent<Player>().PostMove(); //move this later
                 break;
             case Types.Draw:
                 if (DrawType == DrawTypes.Chance)
@@ -65,7 +102,8 @@ public class Tile : MonoBehaviour
                 break;
             case Types.Tax:
                 //charge player tax amount
-                Player.GetComponent<Player>().TaxMoney(TaxPrice);
+                Dice.GetComponent<Dice>().ChargePlayerToBank(Player, TaxPrice, Player.GetComponent<Player>().Name + " owes " + TaxPrice + " to taxes.");
+                //Player.GetComponent<Player>().ChargeMoney(TaxPrice);
                 break;
             case Types.GoToJail:
                 //send player to jail
@@ -82,5 +120,27 @@ public class Tile : MonoBehaviour
                 Player.GetComponent<Player>().PostMove();
                 break;
         }
+    }
+
+    public void SetOwner(GameObject NewOwner)
+    {
+        Owner = NewOwner;
+    }
+
+    public GameObject GetOwner()
+    {
+        return Owner;
+    }
+
+    public bool IsColorSetOwned(GameObject Player)
+    {
+        for (int i = 0; i < ColorSet.Length; i++)
+        {
+            if (ColorSet[i].GetComponent<Tile>().GetOwner() != Player)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
