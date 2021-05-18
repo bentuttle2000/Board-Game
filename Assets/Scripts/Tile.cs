@@ -9,7 +9,7 @@ public class Tile : MonoBehaviour
     public enum Types { Property, Railroad, Utility, Draw, Tax, Go, VisitingJail, InJail, GoToJail, Free };
     public Types Type;
 
-    //used if property (RR and Utility use Purchase Price
+    //used if property (RR and Utility use Purchase Price) (RR Uses houses for payment price)
     private GameObject Owner = null;
     public int PurchasePrice = 0;
     public int HousePrice = 0;
@@ -87,6 +87,66 @@ public class Tile : MonoBehaviour
                 {
                     //you are home, do nothing
                     Player.GetComponent<Player>().PostMove(); 
+                }
+                break;
+            case Types.Railroad:
+                if (Owner == null) //property is unowned
+                {
+                    //offer to buy
+                    Dice.GetComponent<Dice>().OpenBuyPropertyMenu(this.gameObject);
+                }
+                else if (Owner != Player) //property is not owned by the player
+                {
+                    int ChargeAmount;
+
+                    int j = 0;
+
+                    for (int i = 0; i < ColorSet.Length; i++)
+                    {
+                        if (Owner == ColorSet[i].GetComponent<Tile>().Owner)
+                        {
+                            j++;
+                        }
+                    }
+
+                    ChargeAmount = HousePrices[j-1];
+
+                    //Charge player charge amount
+                    Dice.GetComponent<Dice>().ChargePlayerToPlayer(Player, Owner, ChargeAmount, Player.GetComponent<Player>().Name + " owes " + Owner.GetComponent<Player>().Name + " " + ChargeAmount + " for landing on " + Name);
+                }
+                else //property is owned by the player
+                {
+                    //you are home, do nothing
+                    Player.GetComponent<Player>().PostMove();
+                }
+                break;
+            case Types.Utility:
+                if (Owner == null) //property is unowned
+                {
+                    //offer to buy
+                    Dice.GetComponent<Dice>().OpenBuyPropertyMenu(this.gameObject);
+                }
+                else if (Owner != Player) //property is not owned by the player
+                {
+                    int ChargeAmount;
+
+                    if (ColorSet[0].GetComponent<Tile>().Owner != ColorSet[1].GetComponent<Tile>().Owner) //owner owns 1
+                    {
+                        ChargeAmount = Dice.GetComponent<Dice>().GetRecentRoll() * 4;
+                    }
+                    else //owner owns both
+                    {
+                        ChargeAmount = Dice.GetComponent<Dice>().GetRecentRoll() * 10;
+                    }
+
+
+                    //Charge player charge amount
+                    Dice.GetComponent<Dice>().ChargePlayerToPlayer(Player, Owner, ChargeAmount, Player.GetComponent<Player>().Name + " owes " + Owner.GetComponent<Player>().Name + " " + ChargeAmount + " for landing on " + Name);
+                }
+                else //property is owned by the player
+                {
+                    //you are home, do nothing
+                    Player.GetComponent<Player>().PostMove();
                 }
                 break;
             case Types.Draw:

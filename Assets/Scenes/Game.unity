@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Chest
-  Type: 1
+  Type: 3
   PurchasePrice: 0
   HousePrice: 0
   RentPrice: 0
@@ -702,7 +702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Chest
-  Type: 1
+  Type: 3
   PurchasePrice: 0
   HousePrice: 0
   RentPrice: 0
@@ -903,7 +903,7 @@ MonoBehaviour:
   PurchasePrice: 200
   HousePrice: 0
   RentPrice: 0
-  HousePrices: 00000000000000000000000000000000
+  HousePrices: 190000003200000064000000c8000000
   HotelPrice: 0
   ColorSet:
   - {fileID: 258924510}
@@ -1589,7 +1589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Chest
-  Type: 1
+  Type: 3
   PurchasePrice: 0
   HousePrice: 0
   RentPrice: 0
@@ -2995,7 +2995,7 @@ MonoBehaviour:
   PurchasePrice: 200
   HousePrice: 0
   RentPrice: 0
-  HousePrices: 00000000000000000000000000000000
+  HousePrices: 190000003200000064000000c8000000
   HotelPrice: 0
   ColorSet:
   - {fileID: 258924510}
@@ -3438,7 +3438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Green 2
   Type: 0
-  PurchasePrice: 3
+  PurchasePrice: 300
   HousePrice: 200
   RentPrice: 26
   HousePrices: 8200000086010000840300004c040000
@@ -3571,7 +3571,7 @@ MonoBehaviour:
   PurchasePrice: 200
   HousePrice: 0
   RentPrice: 0
-  HousePrices: 00000000000000000000000000000000
+  HousePrices: 190000003200000064000000c8000000
   HotelPrice: 0
   ColorSet:
   - {fileID: 258924510}
@@ -4270,7 +4270,7 @@ MonoBehaviour:
   PurchasePrice: 200
   HousePrice: 0
   RentPrice: 0
-  HousePrices: 00000000000000000000000000000000
+  HousePrices: 190000003200000064000000c8000000
   HotelPrice: 0
   ColorSet:
   - {fileID: 258924510}
@@ -5285,7 +5285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Chest
-  Type: 1
+  Type: 3
   PurchasePrice: 0
   HousePrice: 0
   RentPrice: 0
@@ -5793,7 +5793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: In Jail
-  Type: 5
+  Type: 7
   PurchasePrice: 0
   HousePrice: 0
   RentPrice: 0
@@ -5903,7 +5903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Chest
-  Type: 1
+  Type: 3
   PurchasePrice: 0
   HousePrice: 0
   RentPrice: 0
@@ -6238,7 +6238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Chest
-  Type: 1
+  Type: 3
   PurchasePrice: 0
   HousePrice: 0
   RentPrice: 0
