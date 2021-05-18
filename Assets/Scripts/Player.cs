@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
 
     private bool InJail = false;
 
+    private int TurnsInJail = 0;
+
     private void Start()
     {
         Location = GameObject.FindGameObjectWithTag("Go");
@@ -105,6 +107,11 @@ public class Player : MonoBehaviour
 
     public void StartTurn()
     {
+        if (IsInJail())
+        {
+            TurnsInJail++;
+        }
+
         Dice.GetComponent<Dice>().NewTurn(gameObject);
         transform.GetChild(0).gameObject.SetActive(true);
     }
@@ -185,6 +192,7 @@ public class Player : MonoBehaviour
 
     public void EndOfTurn()
     {
+        IsMoving = false;
         Dice.GetComponent<Dice>().EndOfTurn();
     }
 
@@ -222,11 +230,22 @@ public class Player : MonoBehaviour
         GameObject Visiting = GameObject.FindGameObjectWithTag("VisitingJail");
         SetLocation(Visiting);
         InJail = false;
+        ResetJailTime();
     }
 
     public bool IsInJail()
     {
         return InJail;
+    }
+
+    public void ResetJailTime()
+    {
+        TurnsInJail = 0;
+    }
+
+    public int GetJailTime()
+    {
+        return TurnsInJail;
     }
 
     public int GetMoney()

@@ -11,6 +11,7 @@ public class Dice : MonoBehaviour
     public Canvas EndOfTurnCanvas;
     public Canvas BuyPropertyCanvas;
     public Canvas ChargePlayerCanvas;
+    public Canvas LeaveJailCanvas;
 
     private GameObject PlayersTurn;
     private GameObject CurrentProperty;
@@ -39,11 +40,23 @@ public class Dice : MonoBehaviour
             NumDoubles++;
 
             Again = true;
+
+            if (PlayersTurn.GetComponent<Player>().IsInJail()) //if player in jail when double, release them
+            {
+                LeaveJailRoll();
+            }
         }
-        if (NumDoubles == 3) //If adding option for no max doubles add (&& DoubleCapEnabled) 
+
+        if (NumDoubles == 3) //if third doubles send to jail by returning 0
         {
             return 0;
         }
+
+        if (PlayersTurn.GetComponent<Player>().IsInJail()) //if player is still in jail, do not move
+        {
+            return 0;
+        }
+
         return Dice1 + Dice2;
     }
 
@@ -54,6 +67,7 @@ public class Dice : MonoBehaviour
         EndOfTurnCanvas.gameObject.SetActive(false);
         BuyPropertyCanvas.gameObject.SetActive(false);
         ChargePlayerCanvas.gameObject.SetActive(false);
+        LeaveJailCanvas.gameObject.SetActive(false);
 
         NumDoubles = 0;
         Again = false;
@@ -61,6 +75,8 @@ public class Dice : MonoBehaviour
         if (Player.GetComponent<Player>().IsInJail())
         {
             //ask if player wants to leave jail
+            LeaveJailCanvas.gameObject.SetActive(true);
+
             return; //roll canvas will be enabled when player selects yes or no
         }
 
@@ -214,5 +230,27 @@ public class Dice : MonoBehaviour
 
             MakePaymentFrom.GetComponent<Player>().PostMove();
         }
+    }
+
+    public void LeaveJailPay()
+    {
+        PlayersTurn.GetComponent<Player>().GetOutOfJail();
+        LeaveJailCanvas.gameObject.SetActive(false);
+        Again = true; //allow player to move after getting charged
+
+        ChargePlayerToBank(PlayersTurn, 50, PlayersTurn.GetComponent<Player>().Name + " owes 50 for getting out of jail");
+    }
+    public void StayInJail()
+    {
+        if (PlayersTurn.GetComponent<Player>().GetJailTime() < 3)
+        {
+            RollCanvas.gameObject.SetActive(true);
+            LeaveJailCanvas.gameObject.SetActive(false);
+        }
+    }
+
+    public void LeaveJailRoll()
+    {
+        PlayersTurn.GetComponent<Player>().GetOutOfJail();
     }
 }

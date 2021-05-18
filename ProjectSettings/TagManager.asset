@@ -10,6 +10,7 @@ TagManager:
   - Players
   - InJail
   - VisitingJail
+  - FreeParking
   layers:
   - Default
   - TransparentFX

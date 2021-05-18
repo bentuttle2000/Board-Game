@@ -2893,7 +2893,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You are being charge 200  for income tax
+  m_Text: Would you like to pay 50 to leave jail? (You have to pay if it is your
+    3rd turn in jail)
 --- !u!222 &791098579
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3110,7 +3111,7 @@ GameObject:
   - component: {fileID: 809723291}
   - component: {fileID: 809723290}
   m_Layer: 5
-  m_Name: Make Payment Button
+  m_Name: Leave Jail Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3180,7 +3181,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2109610635}
-        m_MethodName: PayCharge
+        m_MethodName: LeaveJailPay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4423,7 +4424,7 @@ GameObject:
   - component: {fileID: 1329611682}
   - component: {fileID: 1329611681}
   m_Layer: 5
-  m_Name: In Jail Caonvas
+  m_Name: In Jail Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5173,7 +5174,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Manage Properties
+  m_Text: Stay In Jail
 --- !u!222 &1558123402
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5308,12 +5309,12 @@ GameObject:
   - component: {fileID: 1636125660}
   - component: {fileID: 1636125659}
   m_Layer: 5
-  m_Name: Manage Properties Button
+  m_Name: Stay In Jail Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1636125658
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5378,7 +5379,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2109610635}
-        m_MethodName: DeclinePurchase
+        m_MethodName: StayInJail
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5437,7 +5438,7 @@ GameObject:
   - component: {fileID: 1724339958}
   - component: {fileID: 1724339957}
   m_Layer: 5
-  m_Name: Charge Description
+  m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5815,7 +5816,7 @@ GameObject:
   - component: {fileID: 1862786362}
   m_Layer: 0
   m_Name: FreeParking
-  m_TagString: Untagged
+  m_TagString: FreeParking
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6551,7 +6552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Just Visiting
-  Type: 4
+  Type: 6
   PurchasePrice: 0
   HousePrice: 0
   RentPrice: 0
@@ -6631,9 +6632,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Make Payment
-
-'
+  m_Text: Leave Jail
 --- !u!222 &2101685675
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6675,6 +6674,7 @@ MonoBehaviour:
   EndOfTurnCanvas: {fileID: 1756021174}
   BuyPropertyCanvas: {fileID: 819904634}
   ChargePlayerCanvas: {fileID: 251811358}
+  LeaveJailCanvas: {fileID: 1329611683}
 --- !u!4 &2109610636
 Transform:
   m_ObjectHideFlags: 0
