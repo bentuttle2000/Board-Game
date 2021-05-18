@@ -45,11 +45,19 @@ public class Dice : MonoBehaviour
     {
         PlayersTurn = Player;
 
-        RollCanvas.gameObject.SetActive(true);
         EndOfTurnCanvas.gameObject.SetActive(false);
 
         NumDoubles = 0;
         Again = false;
+
+        if (Player.GetComponent<Player>().IsInJail())
+        {
+            //ask if player wants to leave jail
+            return; //roll canvas will be enables when player selects yes or no
+        }
+
+        RollCanvas.gameObject.SetActive(true);
+
     }
 
     public void MovePlayer()

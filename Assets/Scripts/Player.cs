@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 
     private GameObject Players;
 
+    private bool InJail = false;
 
     private void Start()
     {
@@ -36,6 +37,11 @@ public class Player : MonoBehaviour
     public void Update()
     {
         UpdatePosition();
+
+        if (Input.GetKeyDown(KeyCode.Space) && InJail)
+        {
+            GetOutOfJail();
+        }
     }
 
     public void UpdatePosition()
@@ -110,6 +116,7 @@ public class Player : MonoBehaviour
         if (NumSpaces == 0) //Roll returns 0 on 3rd double
         {
             //go to jail
+            SendToJail();
             return;
         }
 
@@ -127,7 +134,7 @@ public class Player : MonoBehaviour
 
         int NewTile = CurTile + NumSpaces;
 
-        if (NewTile > NumTiles)
+        if (NewTile >= NumTiles)
         {
             NewTile -= NumTiles;
         }
@@ -151,12 +158,16 @@ public class Player : MonoBehaviour
             SetLocation(Board.transform.GetChild(CurTile).gameObject);
         }
         yield return new WaitForSecondsRealtime(Sec);
-        PostMove();    
+        LandedOn();    
+    }
+
+    public void LandedOn()
+    {
+        Location.GetComponent<Tile>().LandedOn(gameObject);
     }
 
     public void PostMove()
     {
-        Location.GetComponent<Tile>().LandedOn(gameObject);
         IsMoving = false;
         if (!Dice.GetComponent<Dice>().PlayAgain())
         {
@@ -189,6 +200,28 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void SendToJail()
+    {
+        print("Sending to jail");
+        GameObject Jail = GameObject.FindGameObjectWithTag("InJail");
+        SetLocation(Jail);
+        InJail = true;
+        EndOfTurn();
+    }
+
+    public void GetOutOfJail()
+    {
+        GameObject Visiting = GameObject.FindGameObjectWithTag("VisitingJail");
+        SetLocation(Visiting);
+        InJail = false;
+
+    }
+
+    public bool IsInJail()
+    {
+        return InJail;
+    }
+
     public int GetMoney()
     {
         return Money;
@@ -205,6 +238,16 @@ public class Player : MonoBehaviour
         {
             Money -= Amount;
         }
+        else
+        {
+            //player does ont have enough money, must manage properties or go bankrupt
+            //load menu for not enough money
+        }
+    }
+    public void TaxMoney(int Amount)
+    {
+        TakeMoney(Amount);
+        PostMove();  //move this later so player does not postmove until after money is taken
     }
 
     public void PassGo()

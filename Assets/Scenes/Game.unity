@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 14466705}
   m_Layer: 0
   m_Name: Utility2
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,7 +203,7 @@ Transform:
   m_GameObject: {fileID: 56725650}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.7215767, y: -5.73018, z: 3.7128906}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 300941906}
   m_RootOrder: 1
@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 88496961}
   m_Layer: 0
   m_Name: Tax1
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 101183052}
   m_Layer: 0
   m_Name: Green3
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 114166289}
   m_Layer: 0
   m_Name: Chest3
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 121341325}
   m_Layer: 0
   m_Name: DBlue1
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 142920236}
   m_Layer: 0
   m_Name: Chest2
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 208104324}
   m_Layer: 0
   m_Name: GoToJail
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -586,7 +586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Go To Jail
-  Type: 6
+  Type: 8
   PurchasePrice: 0
   HousePrice: 0
   RentPrice: 0
@@ -607,7 +607,7 @@ GameObject:
   - component: {fileID: 258924511}
   m_Layer: 0
   m_Name: Railroad1
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -664,7 +664,7 @@ GameObject:
   - component: {fileID: 260737699}
   m_Layer: 0
   m_Name: Yellow1
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -753,7 +753,7 @@ GameObject:
   - component: {fileID: 381978393}
   m_Layer: 0
   m_Name: Red1
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -809,7 +809,7 @@ GameObject:
   - component: {fileID: 409810117}
   m_Layer: 0
   m_Name: Utility1
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -864,7 +864,7 @@ GameObject:
   - component: {fileID: 423948335}
   m_Layer: 0
   m_Name: Chest1
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -917,7 +917,7 @@ GameObject:
   - component: {fileID: 451509057}
   m_Layer: 0
   m_Name: LBlue2
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1056,7 +1056,7 @@ GameObject:
   - component: {fileID: 540263935}
   m_Layer: 0
   m_Name: LBlue1
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1112,7 +1112,7 @@ GameObject:
   - component: {fileID: 644157118}
   m_Layer: 0
   m_Name: DBlue2
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1167,7 +1167,7 @@ GameObject:
   - component: {fileID: 683399717}
   m_Layer: 0
   m_Name: Yellow3
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1223,7 +1223,7 @@ GameObject:
   - component: {fileID: 728842952}
   m_Layer: 0
   m_Name: Tax2
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1291,7 +1291,7 @@ Transform:
   m_GameObject: {fileID: 748189470}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.7215767, y: -5.73018, z: 3.7128906}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 300941906}
   m_RootOrder: 2
@@ -1632,7 +1632,7 @@ GameObject:
   - component: {fileID: 795023593}
   m_Layer: 0
   m_Name: Orange3
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1688,7 +1688,7 @@ GameObject:
   - component: {fileID: 800728874}
   m_Layer: 0
   m_Name: Railroad2
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1823,7 +1823,7 @@ GameObject:
   - component: {fileID: 926924264}
   m_Layer: 0
   m_Name: Green2
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1879,7 +1879,7 @@ GameObject:
   - component: {fileID: 982020963}
   m_Layer: 0
   m_Name: Orange2
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2034,7 +2034,7 @@ GameObject:
   - component: {fileID: 1016319652}
   m_Layer: 0
   m_Name: Railroad4
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2190,7 +2190,7 @@ GameObject:
   - component: {fileID: 1111228427}
   m_Layer: 0
   m_Name: Brown1
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2245,7 +2245,7 @@ GameObject:
   - component: {fileID: 1146875373}
   m_Layer: 0
   m_Name: Brown2
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2315,7 +2315,7 @@ Transform:
   m_GameObject: {fileID: 1247997587}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.7215767, y: -5.73018, z: 3.7128906}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 300941906}
   m_RootOrder: 0
@@ -2396,7 +2396,7 @@ GameObject:
   - component: {fileID: 1290354632}
   m_Layer: 0
   m_Name: Red2
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2452,7 +2452,7 @@ GameObject:
   - component: {fileID: 1307918409}
   m_Layer: 0
   m_Name: Railroad3
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2509,7 +2509,7 @@ GameObject:
   - component: {fileID: 1309607470}
   m_Layer: 0
   m_Name: LBlue3
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2565,7 +2565,7 @@ GameObject:
   - component: {fileID: 1319286364}
   m_Layer: 0
   m_Name: Green1
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2789,7 +2789,7 @@ GameObject:
   - component: {fileID: 1385911527}
   m_Layer: 0
   m_Name: Pink1
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2845,7 +2845,7 @@ GameObject:
   - component: {fileID: 1403366849}
   m_Layer: 0
   m_Name: Pink3
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3032,7 +3032,7 @@ GameObject:
   - component: {fileID: 1540063485}
   m_Layer: 0
   m_Name: Yellow2
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3088,7 +3088,7 @@ GameObject:
   - component: {fileID: 1599617967}
   m_Layer: 0
   m_Name: Red3
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3144,7 +3144,7 @@ GameObject:
   - component: {fileID: 1627638317}
   m_Layer: 0
   m_Name: Chance2
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3296,7 +3296,7 @@ GameObject:
   - component: {fileID: 1816524976}
   m_Layer: 0
   m_Name: InJail
-  m_TagString: Go
+  m_TagString: InJail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3349,7 +3349,7 @@ GameObject:
   - component: {fileID: 1862786362}
   m_Layer: 0
   m_Name: FreeParking
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3402,7 +3402,7 @@ GameObject:
   - component: {fileID: 1881337602}
   m_Layer: 0
   m_Name: Chance1
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3576,7 +3576,7 @@ GameObject:
   - component: {fileID: 2020682497}
   m_Layer: 0
   m_Name: Pink2
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3632,7 +3632,7 @@ GameObject:
   - component: {fileID: 2061894797}
   m_Layer: 0
   m_Name: Chance3
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3759,7 +3759,7 @@ GameObject:
   - component: {fileID: 2100906817}
   m_Layer: 0
   m_Name: VisitingJail
-  m_TagString: Go
+  m_TagString: VisitingJail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3860,7 +3860,7 @@ GameObject:
   - component: {fileID: 2110168316}
   m_Layer: 0
   m_Name: Orange1
-  m_TagString: Go
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
