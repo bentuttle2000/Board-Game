@@ -287,7 +287,7 @@ public class Dice : MonoBehaviour
     }
     public void StayInJail()
     {
-        if (PlayersTurn.GetComponent<Player>().GetJailTime() < 3)
+        if (PlayersTurn.GetComponent<Player>().GetJailTime() <= 3)
         {
             RollCanvas.gameObject.SetActive(true);
             LeaveJailCanvas.gameObject.SetActive(false);
