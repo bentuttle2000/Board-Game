@@ -7,6 +7,9 @@ TagManager:
   - Go
   - Board
   - Dice
+  - Players
+  - InJail
+  - VisitingJail
   layers:
   - Default
   - TransparentFX

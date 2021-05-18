@@ -35,36 +35,52 @@ public class Tile : MonoBehaviour
 
     public void LandedOn(GameObject Player)
     {
-        print("Landed on: " + Name);
-
         switch (Type)
         {
             case Types.Property:
-                if (Owner != null)
+                if (Owner != null) //property is unowned
                 {
                     //offer to buy
                 }
-                else
+                else if (Owner != Player) //property is not owned by the player
                 {
                     //charge rent and give to owner
-                    
                 }
+                else //property is owned by the player
+                {
+                    //you are home
+                }
+                Player.GetComponent<Player>().PostMove(); //move this later
                 break;
             case Types.Draw:
+                if (DrawType == DrawTypes.Chance)
+                {
+                    //draw chance
+                }
+                else
+                {
+                    //draw community chest
+                }
+                Player.GetComponent<Player>().PostMove(); //move this later
                 break;
             case Types.Tax:
-                break;
-            case Types.Go:
-                break;
-            case Types.VisitingJail:
-                break;
-            case Types.InJail:
+                //charge player tax amount
+                Player.GetComponent<Player>().TaxMoney(TaxPrice);
                 break;
             case Types.GoToJail:
+                //send player to jail
+                Player.GetComponent<Player>().SendToJail();
                 break;
             case Types.Free:
+                //give player money on free parking
+                Player.GetComponent<Player>().AddMoney(FreeParkingMoney);
+                FreeParkingMoney = 0;
+                Player.GetComponent<Player>().PostMove();
+                break;
+            default:
+                //do nothing on go and visiting jail
+                Player.GetComponent<Player>().PostMove();
                 break;
         }
-
     }
 }

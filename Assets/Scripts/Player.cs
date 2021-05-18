@@ -15,6 +15,12 @@ public class Player : MonoBehaviour
 
     private int GoMoney = 200;
 
+    private bool IsMoving = false;
+
+    private GameObject Players;
+
+    private bool InJail = false;
+
     private void Start()
     {
         Location = GameObject.FindGameObjectWithTag("Go");
@@ -22,18 +28,63 @@ public class Player : MonoBehaviour
         Board = GameObject.FindGameObjectWithTag("Board");
 
         Dice = GameObject.FindGameObjectWithTag("Dice");
+
+        Players = GameObject.FindGameObjectWithTag("Players");
+
+        StartTurn();
     }
 
     public void Update()
     {
-        transform.position = new Vector3(Location.transform.position.x, Location.transform.position.y, -1);
+        UpdatePosition();
 
-        //Move
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && InJail)
         {
-            Move();
+            GetOutOfJail();
         }
-        
+    }
+
+    public void UpdatePosition()
+    {
+        float DX = 0, DY = 0;
+        int NumPlayers = Players.transform.childCount;
+        for (int i = 0; i < NumPlayers; i++)
+        {
+            if (Players.transform.GetChild(i).GetComponent<Player>().Name == Name)
+            {
+                switch (i)
+                {
+                    case 0:
+                        DX = 0;
+                        DY = .1f;
+                        break;
+                    case 1:
+                        DX = 0;
+                        DY = -.1f;
+                        break;
+                    case 2:
+                        DX = .1f;
+                        DY = 0;
+                        break;
+                    case 3:
+                        DX = -.1f;
+                        DY = 0;
+                        break;
+                    case 4:
+                        DX = .1f;
+                        DY = .1f;
+                        break;
+                    case 5:
+                        DX = -.1f;
+                        DY = -.1f;
+                        break;
+                }
+
+            }
+        }
+
+        transform.position = new Vector3(Location.transform.position.x + DX, Location.transform.position.y + DY, -1);
+
     }
 
     public GameObject GetLocation()
@@ -46,18 +97,30 @@ public class Player : MonoBehaviour
         Location = NewLocation;
     }
 
+    public void StartTurn()
+    {
+        Dice.GetComponent<Dice>().NewTurn(gameObject);
+    }
+
     public void Move()
     {
+        if (IsMoving)
+        {
+            return; //do not try to move if already moving
+        }
+
+        IsMoving = true;
 
         int NumSpaces = Dice.GetComponent<Dice>().Roll();
 
         if (NumSpaces == 0) //Roll returns 0 on 3rd double
         {
             //go to jail
+            SendToJail();
+            return;
         }
 
-
-        int NumTiles = Board.transform.childCount - 1;
+        int NumTiles = Board.transform.childCount;
 
         int CurTile = -1;
 
@@ -71,15 +134,14 @@ public class Player : MonoBehaviour
 
         int NewTile = CurTile + NumSpaces;
 
-        if (NewTile > NumTiles)
+        if (NewTile >= NumTiles)
         {
             NewTile -= NumTiles;
-
         }
 
         StartCoroutine(Moving(.2f, CurTile, NumTiles, NewTile));
 
-
+        return;
     }
 
     IEnumerator Moving(float Sec, int CurTile, int NumTiles, int NewTile)
@@ -88,7 +150,7 @@ public class Player : MonoBehaviour
         {
             yield return new WaitForSecondsRealtime(Sec);
             CurTile++;
-            if (CurTile > NumTiles)
+            if (CurTile >= NumTiles)
             {
                 CurTile -= NumTiles;
                 PassGo();
@@ -96,12 +158,68 @@ public class Player : MonoBehaviour
             SetLocation(Board.transform.GetChild(CurTile).gameObject);
         }
         yield return new WaitForSecondsRealtime(Sec);
-        PostMove();    
+        LandedOn();    
+    }
+
+    public void LandedOn()
+    {
+        Location.GetComponent<Tile>().LandedOn(gameObject);
     }
 
     public void PostMove()
     {
-        Location.GetComponent<Tile>().LandedOn(gameObject);
+        IsMoving = false;
+        if (!Dice.GetComponent<Dice>().PlayAgain())
+        {
+            //move to end phase (aka enable menus for trading and buying houses)
+            EndOfTurn();
+        }
+    }
+
+    public void EndOfTurn()
+    {
+        Dice.GetComponent<Dice>().EndOfTurn();
+    }
+
+    public void EndTurn()
+    {
+        int NumPlayers = Players.transform.childCount;
+        for (int i = 0; i < NumPlayers; i++)
+        {
+            if (Players.transform.GetChild(i).GetComponent<Player>().Name == Name)
+            {
+                //set next players turn (loop around if last player) 
+                int NextPlayer = i + 1;
+                if (NextPlayer == NumPlayers)
+                {
+                    NextPlayer = 0;
+                }
+                Players.transform.GetChild(NextPlayer).GetComponent<Player>().StartTurn();
+                return;
+            }
+        }
+    }
+
+    public void SendToJail()
+    {
+        print("Sending to jail");
+        GameObject Jail = GameObject.FindGameObjectWithTag("InJail");
+        SetLocation(Jail);
+        InJail = true;
+        EndOfTurn();
+    }
+
+    public void GetOutOfJail()
+    {
+        GameObject Visiting = GameObject.FindGameObjectWithTag("VisitingJail");
+        SetLocation(Visiting);
+        InJail = false;
+
+    }
+
+    public bool IsInJail()
+    {
+        return InJail;
     }
 
     public int GetMoney()
@@ -120,11 +238,21 @@ public class Player : MonoBehaviour
         {
             Money -= Amount;
         }
+        else
+        {
+            //player does ont have enough money, must manage properties or go bankrupt
+            //load menu for not enough money
+        }
+    }
+    public void TaxMoney(int Amount)
+    {
+        TakeMoney(Amount);
+        PostMove();  //move this later so player does not postmove until after money is taken
     }
 
     public void PassGo()
     {
-        AddMoney(200);
+        AddMoney(GoMoney);
     }
 
 }
