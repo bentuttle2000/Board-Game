@@ -93,6 +93,18 @@ public class Player : MonoBehaviour
     {
         transform.GetChild(0).GetChild(1).GetComponent<Text>().text = Name;
         transform.GetChild(0).GetChild(2).GetComponent<Text>().text = "Money: " + Money;
+        
+        for (int i = 0; i < 28; i++)
+        {
+            if (transform.GetChild(0).GetChild(3).GetChild(i).GetComponent<DisplayPiece>().Tile.GetComponent<Tile>().GetOwner() == this.gameObject)
+            { 
+                transform.GetChild(0).GetChild(3).GetChild(i).gameObject.SetActive(true);
+            }
+            else
+            {
+                transform.GetChild(0).GetChild(3).GetChild(i).gameObject.SetActive(false);
+            }
+        }
     }
 
     public GameObject GetLocation()
