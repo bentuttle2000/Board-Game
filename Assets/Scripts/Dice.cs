@@ -13,6 +13,8 @@ public class Dice : MonoBehaviour
     public Canvas ChargePlayerCanvas;
     public Canvas LeaveJailCanvas;
     public Canvas ManagePropertyCanvas;
+    public Canvas TradeCanvas;
+    public Canvas SelectPlayerCanvas;
 
     private GameObject PlayersTurn;
     private GameObject CurrentProperty;
@@ -23,10 +25,16 @@ public class Dice : MonoBehaviour
 
     private int MostRecentRoll;
 
+    private GameObject Players;
+
+    private GameObject TradePartner;
+
+
     private void Start()
     {
         transform.GetChild(0).GetComponent<Animator>().SetInteger("Dice", 1);
         transform.GetChild(1).GetComponent<Animator>().SetInteger("Dice", 1);
+        Players = GameObject.FindGameObjectWithTag("Players");
     }
 
     private void Update()
@@ -79,6 +87,8 @@ public class Dice : MonoBehaviour
         ChargePlayerCanvas.gameObject.SetActive(false);
         LeaveJailCanvas.gameObject.SetActive(false);
         ManagePropertyCanvas.gameObject.SetActive(false);
+        TradeCanvas.gameObject.SetActive(false);
+        SelectPlayerCanvas.gameObject.SetActive(false);
 
         NumDoubles = 0;
         Again = false;
@@ -219,6 +229,24 @@ public class Dice : MonoBehaviour
         return MostRecentRoll;
     }
 
+    public void OpenTradeMenu()
+    {
+        TradeCanvas.gameObject.SetActive(true);
+    }
+
+    public void OpenSelectPlayerMenu()
+    {
+        SelectPlayerCanvas.gameObject.SetActive(true);
+        TradeCanvas.gameObject.SetActive(false);
+    }
+
+    public void SelectPlayerForTrade(int Player)
+    {
+        TradePartner = Players.transform.GetChild(Player).gameObject;
+        SelectPlayerCanvas.gameObject.SetActive(false);
+        OpenTradeMenu();
+    }
+
     public void OpenBuyPropertyMenu(GameObject Property)
     {
         BuyPropertyCanvas.gameObject.SetActive(true);
@@ -248,8 +276,11 @@ public class Dice : MonoBehaviour
                 ManagePropertyCanvas.transform.GetChild(2).gameObject.SetActive(false);
                 break;
         }
+    }
 
-
+    public void ClosePropertyMenu()
+    {
+        ManagePropertyCanvas.gameObject.SetActive(false);
     }
 
     public void DisplayPropertyMenu(Canvas Can, GameObject Property)
@@ -340,8 +371,6 @@ public class Dice : MonoBehaviour
         Can.transform.GetChild(0).GetChild(1).GetChild(2).GetComponent<Text>().text = "Purchase: " + Property.GetComponent<Tile>().PurchasePrice.ToString();
 
         CurrentProperty = Property;
-
-
     }
 
     public void BuyHouse()
