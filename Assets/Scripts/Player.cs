@@ -298,4 +298,30 @@ public class Player : MonoBehaviour
         AddMoney(GoMoney);
     }
 
+    public void GoBankruptToBank()
+    {
+        for (int i = 0; i < Board.transform.childCount; i++)
+        {
+            if (Board.transform.GetChild(i).GetComponent<Tile>().GetOwner() == this.gameObject)
+            {
+                Board.transform.GetChild(i).GetComponent<Tile>().TileReset();
+            }
+        }
+        EndTurn();
+        Destroy(gameObject);
+    }
+
+    public void GoBankruptToPlayer(GameObject Player)
+    {
+        for (int i = 0; i < Board.transform.childCount; i++)
+        {
+            if (Board.transform.GetChild(i).GetComponent<Tile>().GetOwner() == this.gameObject)
+            {
+                Board.transform.GetChild(i).GetComponent<Tile>().SetOwner(Player);
+            }
+        }
+        Player.GetComponent<Player>().AddMoney(Money);
+        EndTurn();
+        Destroy(gameObject);
+    }
 }
