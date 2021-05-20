@@ -346,4 +346,12 @@ public class Tile : MonoBehaviour
             }
         }
     }
+
+    public void TileReset()
+    {
+        IsMortgaged = false;
+        NumHouses = 0;
+        NumHotels = 0;
+        Owner = null;
+    }
 }

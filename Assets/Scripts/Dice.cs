@@ -13,6 +13,11 @@ public class Dice : MonoBehaviour
     public Canvas ChargePlayerCanvas;
     public Canvas LeaveJailCanvas;
     public Canvas ManagePropertyCanvas;
+    public Canvas TradeCanvas;
+    public Canvas TradeDisplayCanvas;
+    public Canvas SelectPlayerCanvas;
+    public Canvas SelectGiveCanvas;
+    public Canvas SelectWantCanvas;
 
     private GameObject PlayersTurn;
     private GameObject CurrentProperty;
@@ -23,15 +28,68 @@ public class Dice : MonoBehaviour
 
     private int MostRecentRoll;
 
+    private GameObject Players;
+
+    private GameObject TradePartner = null;
+
+    //trading lists
+    private List<GameObject> GiveList = new List<GameObject>();
+    private List<GameObject> WantList = new List<GameObject>();
+
+    private int GiveMoney = 0;
+    private int WantMoney = 0;
+
+
     private void Start()
     {
         transform.GetChild(0).GetComponent<Animator>().SetInteger("Dice", 1);
         transform.GetChild(1).GetComponent<Animator>().SetInteger("Dice", 1);
+        Players = GameObject.FindGameObjectWithTag("Players");
     }
 
     private void Update()
     {
-        //display houses
+        //display trade
+        if (TradePartner != null)
+        {
+            UpdateTrade();
+        }
+        else
+        {
+            TradeDisplayCanvas.gameObject.SetActive(false);
+        }
+    }
+
+    public void UpdateTrade()
+    {
+        TradeDisplayCanvas.gameObject.SetActive(true);
+
+        for (int i = 0; i < 28; i++)
+        {
+            if (GiveList.Contains(SelectGiveCanvas.transform.GetChild(0).GetChild(3).GetChild(i).GetComponent<DisplayPiece>().Tile.gameObject))
+            {
+                TradeDisplayCanvas.transform.GetChild(0).GetChild(3).GetChild(i).gameObject.SetActive(true);
+            }
+            else
+            {
+                TradeDisplayCanvas.transform.GetChild(0).GetChild(3).GetChild(i).gameObject.SetActive(false);
+            }
+
+            if (WantList.Contains(SelectGiveCanvas.transform.GetChild(0).GetChild(3).GetChild(i).GetComponent<DisplayPiece>().Tile.gameObject))
+            {
+                TradeDisplayCanvas.transform.GetChild(1).GetChild(3).GetChild(i).gameObject.SetActive(true);
+            }
+            else
+            {
+                TradeDisplayCanvas.transform.GetChild(1).GetChild(3).GetChild(i).gameObject.SetActive(false);
+            }
+
+        }
+        TradeDisplayCanvas.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = PlayersTurn.GetComponent<Player>().Name;
+        TradeDisplayCanvas.transform.GetChild(0).GetChild(2).GetComponent<Text>().text = "Money: " + GiveMoney;
+
+        TradeDisplayCanvas.transform.GetChild(1).GetChild(1).GetComponent<Text>().text = TradePartner.GetComponent<Player>().Name;
+        TradeDisplayCanvas.transform.GetChild(1).GetChild(2).GetComponent<Text>().text = "Money: " + WantMoney;
     }
 
     public int Roll()
@@ -79,6 +137,11 @@ public class Dice : MonoBehaviour
         ChargePlayerCanvas.gameObject.SetActive(false);
         LeaveJailCanvas.gameObject.SetActive(false);
         ManagePropertyCanvas.gameObject.SetActive(false);
+        TradeCanvas.gameObject.SetActive(false);
+        TradeDisplayCanvas.gameObject.SetActive(false);
+        SelectPlayerCanvas.gameObject.SetActive(false);
+        SelectGiveCanvas.gameObject.SetActive(false);
+        SelectWantCanvas.gameObject.SetActive(false);
 
         NumDoubles = 0;
         Again = false;
@@ -219,11 +282,178 @@ public class Dice : MonoBehaviour
         return MostRecentRoll;
     }
 
+    public void OpenTradeMenu()
+    {
+        TradeCanvas.gameObject.SetActive(true);
+        EndOfTurnCanvas.gameObject.SetActive(false);
+        if (TradePartner == null)
+        {
+            TradeCanvas.transform.GetChild(0).gameObject.SetActive(true);
+            TradeCanvas.transform.GetChild(1).gameObject.SetActive(false);
+            TradeCanvas.transform.GetChild(2).gameObject.SetActive(false);
+        }
+        else
+        {
+            TradeCanvas.transform.GetChild(0).gameObject.SetActive(false);
+            TradeCanvas.transform.GetChild(1).gameObject.SetActive(true);
+            TradeCanvas.transform.GetChild(2).gameObject.SetActive(true);
+        }
+    }
+
+    public void CloseTradeMenu()
+    {
+        TradeCanvas.gameObject.SetActive(false);
+        EndOfTurnCanvas.gameObject.SetActive(true);
+        TradePartner = null;
+    }
+
+    public void OpenSelectPlayerMenu()
+    {
+        SelectPlayerCanvas.gameObject.SetActive(true);
+        for (int i = 0; i < SelectPlayerCanvas.transform.childCount; i++)
+        {
+            if (i < Players.transform.childCount)
+            {
+                SelectPlayerCanvas.transform.GetChild(i).gameObject.SetActive(true);
+
+                SelectPlayerCanvas.transform.GetChild(i).GetChild(0).GetComponent<Text>().text = Players.transform.GetChild(i).GetComponent<Player>().Name;
+
+                if (Players.transform.GetChild(i).GetComponent<Player>().Name == PlayersTurn.GetComponent<Player>().Name)
+                {
+                    SelectPlayerCanvas.transform.GetChild(i).gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                SelectPlayerCanvas.transform.GetChild(i).gameObject.SetActive(false);
+            }
+        }
+        TradeCanvas.gameObject.SetActive(false);
+    }
+
+    public void OpenSelectGiveMenu()
+    {
+        SelectGiveCanvas.gameObject.SetActive(true);
+        TradeCanvas.gameObject.SetActive(false);
+
+        for (int i = 0; i < 28; i++)
+        {
+            if (SelectGiveCanvas.transform.GetChild(0).GetChild(3).GetChild(i).GetComponent<DisplayPiece>().Tile.GetComponent<Tile>().GetOwner() == PlayersTurn)
+            {
+                SelectGiveCanvas.transform.GetChild(0).GetChild(3).GetChild(i).gameObject.SetActive(true);
+            }
+            else
+            {
+                SelectGiveCanvas.transform.GetChild(0).GetChild(3).GetChild(i).gameObject.SetActive(false);
+            }
+        }
+        SelectGiveCanvas.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = PlayersTurn.GetComponent<Player>().Name;
+        SelectGiveCanvas.transform.GetChild(0).GetChild(2).GetComponent<Text>().text = "Money: " + PlayersTurn.GetComponent<Player>().GetMoney().ToString();
+    }
+    public void CloseSelectGiveMenu()
+    {
+        SelectGiveCanvas.gameObject.SetActive(false);
+        OpenTradeMenu();
+    }
+    public void OpenSelectWantMenu()
+    {
+        SelectWantCanvas.gameObject.SetActive(true);
+        TradeCanvas.gameObject.SetActive(false);
+
+        for (int i = 0; i < 28; i++)
+        {
+            if (SelectWantCanvas.transform.GetChild(0).GetChild(3).GetChild(i).GetComponent<DisplayPiece>().Tile.GetComponent<Tile>().GetOwner() == TradePartner)
+            {
+                SelectWantCanvas.transform.GetChild(0).GetChild(3).GetChild(i).gameObject.SetActive(true);
+            }
+            else
+            {
+                SelectWantCanvas.transform.GetChild(0).GetChild(3).GetChild(i).gameObject.SetActive(false);
+            }
+        }
+        SelectWantCanvas.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = TradePartner.GetComponent<Player>().Name;
+        SelectWantCanvas.transform.GetChild(0).GetChild(2).GetComponent<Text>().text = "Money: " + TradePartner.GetComponent<Player>().GetMoney().ToString();
+    }
+    public void CloseSelectWantMenu()
+    {
+        SelectWantCanvas.gameObject.SetActive(false);
+        OpenTradeMenu();
+    }
+
+    public void AddToGiveList(GameObject Tile)
+    {
+        GiveList.Add(Tile);
+    }
+
+    public void AddGiveMoney(int Amount)
+    {
+        if (PlayersTurn.GetComponent<Player>().GetMoney() >= GiveMoney + Amount)
+        {
+            GiveMoney += Amount;
+        }
+    }
+
+    public void RemoveGiveMoney(int Amount)
+    {
+        if (GiveMoney >= Amount)
+        {
+            GiveMoney -= Amount;
+        }
+    }
+    public void AddWantMoney(int Amount)
+    {
+        if (TradePartner.GetComponent<Player>().GetMoney() >= GiveMoney + Amount)
+        {
+            WantMoney += Amount;
+        }
+    }
+
+    public void RemoveWantMoney(int Amount)
+    {
+        if (WantMoney >= Amount)
+        {
+            WantMoney -= Amount;
+        }
+    }
+
+    public void SelectPlayerForTrade(int Player)
+    {
+        TradePartner = Players.transform.GetChild(Player).gameObject;
+        SelectPlayerCanvas.gameObject.SetActive(false);
+        OpenTradeMenu();
+    }
+
     public void OpenBuyPropertyMenu(GameObject Property)
     {
         BuyPropertyCanvas.gameObject.SetActive(true);
         DisplayPropertyMenu(BuyPropertyCanvas, Property);
         CurrentProperty = Property;
+    }
+
+    public void ConfirmTrade()
+    {
+
+        PlayersTurn.GetComponent<Player>().AddMoney(WantMoney);
+        PlayersTurn.GetComponent<Player>().TakeMoney(GiveMoney);
+        TradePartner.GetComponent<Player>().TakeMoney(WantMoney);
+        TradePartner.GetComponent<Player>().AddMoney(GiveMoney);
+
+        GiveMoney = 0;
+        WantMoney = 0;
+
+        for (int i = 0; i < 28; i++)
+        {
+            if (GiveList.Contains(SelectGiveCanvas.transform.GetChild(0).GetChild(3).GetChild(i).GetComponent<DisplayPiece>().Tile.gameObject) && TradePartner != null)
+            {
+                SelectGiveCanvas.transform.GetChild(0).GetChild(3).GetChild(i).GetComponent<DisplayPiece>().Tile.gameObject.GetComponent<Tile>().SetOwner(TradePartner);
+            }
+
+            if (WantList.Contains(SelectGiveCanvas.transform.GetChild(0).GetChild(3).GetChild(i).GetComponent<DisplayPiece>().Tile.gameObject) && TradePartner != null)
+            {
+                SelectGiveCanvas.transform.GetChild(0).GetChild(3).GetChild(i).GetComponent<DisplayPiece>().Tile.gameObject.GetComponent<Tile>().SetOwner(PlayersTurn);
+            }
+        }
+        CloseTradeMenu();
     }
 
     public void OpenManagePropertyMenu(GameObject Property)
@@ -248,8 +478,11 @@ public class Dice : MonoBehaviour
                 ManagePropertyCanvas.transform.GetChild(2).gameObject.SetActive(false);
                 break;
         }
+    }
 
-
+    public void ClosePropertyMenu()
+    {
+        ManagePropertyCanvas.gameObject.SetActive(false);
     }
 
     public void DisplayPropertyMenu(Canvas Can, GameObject Property)
@@ -340,8 +573,6 @@ public class Dice : MonoBehaviour
         Can.transform.GetChild(0).GetChild(1).GetChild(2).GetComponent<Text>().text = "Purchase: " + Property.GetComponent<Tile>().PurchasePrice.ToString();
 
         CurrentProperty = Property;
-
-
     }
 
     public void BuyHouse()
@@ -359,5 +590,17 @@ public class Dice : MonoBehaviour
     public void Unmortgage()
     {
         CurrentProperty.GetComponent<Tile>().Unmortgage();
+    }
+
+    public void GoBankrupt()
+    {
+        if (MakePaymentTo == null) //bankrupt to bank
+        {
+            MakePaymentFrom.GetComponent<Player>().GoBankruptToBank();
+        }
+        else //bankrupt to player they are paying
+        {
+            MakePaymentFrom.GetComponent<Player>().GoBankruptToPlayer(MakePaymentTo);
+        }
     }
 }
