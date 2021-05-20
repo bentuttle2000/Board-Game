@@ -199,12 +199,13 @@ public class Tile : MonoBehaviour
                 if (DrawType == DrawTypes.Chance)
                 {
                     //draw chance
+                    Player.GetComponent<Player>().DrawCard(0);
                 }
                 else
                 {
                     //draw community chest
+                    Player.GetComponent<Player>().DrawCard(1);
                 }
-                Player.GetComponent<Player>().PostMove(); //move this later
                 break;
             case Types.Tax:
                 //charge player tax amount

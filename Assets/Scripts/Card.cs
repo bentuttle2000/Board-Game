@@ -35,43 +35,90 @@ public class Card : MonoBehaviour
         }
     }
 
-    public void Effect(GameObject Player)
+    public void DrawCard(GameObject Player)
     {
-        Player P = Player.GetComponent<Player>();
+        Effect(Player);
+
+        int Deck = 0;
+
+        int TempID = ID;
+
         switch (DeckType)
         {
             case DeckTypes.Chance:
+                Deck = 0;
+                break;
+            case DeckTypes.Chest:
+                Deck = 1;
+                break;
+        }
 
+        for (int i = 1; i < DeckSize; i++)
+        {
+            Decks.transform.GetChild(Deck).GetChild(i - 1).GetComponent<Card>().ID = Decks.transform.GetChild(Deck).GetChild(i).GetComponent<Card>().ID;
+        }
+        Decks.transform.GetChild(Deck).GetChild(DeckSize - 1).GetComponent<Card>().ID = TempID;
+    }
+
+    public void Effect(GameObject Player)
+    {
+        switch (DeckType)
+        {
+            case DeckTypes.Chance:
                 switch (ID)
                 {
                     case 0:
                         Message = "Advance to Go";
-                        P.SetLocation(GameObject.FindGameObjectWithTag("Go"));
-                        P.LandedOn();
+                        Player.GetComponent<Player>().MoveTo(GameObject.FindGameObjectWithTag("Go"));
                         break;
                     case 1:
                         Message = "Quinn pooped on your bed. Pay 20";
                         Dice.GetComponent<Dice>().ChargePlayerToBank(Player, 20, Message);
+                        Player.GetComponent<Player>().PostMove();
                         break;
                     case 2:
                         Message = "You got an A on your exam. Collect 30";
-                        P.AddMoney(30);
+                        Player.GetComponent<Player>().AddMoney(30);
+                        Player.GetComponent<Player>().PostMove();
                         break;
                     default:
                         //Not a valid card
+                        Player.GetComponent<Player>().PostMove();
                         break;
                 }
-
-
                 break;
 
             case DeckTypes.Chest:
-
-
-
-
+                switch (ID)
+                {
+                    case 0:
+                        Message = "Advance to Go";
+                        Player.GetComponent<Player>().MoveTo(GameObject.FindGameObjectWithTag("Go"));
+                        break;
+                    case 1:
+                        Message = "Quinn pooped on your bed. Pay 20";
+                        Dice.GetComponent<Dice>().ChargePlayerToBank(Player, 20, Message);
+                        Player.GetComponent<Player>().PostMove();
+                        break;
+                    case 2:
+                        Message = "You got an A on your exam. Collect 30";
+                        Player.GetComponent<Player>().AddMoney(30);
+                        Player.GetComponent<Player>().PostMove();
+                        break;
+                    default:
+                        //Not a valid card
+                        Player.GetComponent<Player>().PostMove();
+                        break;
+                }
                 break;
         }
+        print(Message);
 
+    }
+
+    IEnumerator MoveThenLand(GameObject Player)
+    {
+        yield return new WaitForSecondsRealtime(1);
+        
     }
 }

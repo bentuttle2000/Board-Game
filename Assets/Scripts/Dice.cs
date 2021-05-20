@@ -49,6 +49,11 @@ public class Dice : MonoBehaviour
 
     private void Update()
     {
+        if (PlayersTurn == null)
+        {
+            Players.transform.GetChild(0).GetComponent<Player>().StartTurn();
+        }
+
         //display trade
         if (TradePartner != null)
         {
@@ -58,6 +63,7 @@ public class Dice : MonoBehaviour
         {
             TradeDisplayCanvas.gameObject.SetActive(false);
         }
+        
     }
 
     public void UpdateTrade()
@@ -291,12 +297,14 @@ public class Dice : MonoBehaviour
             TradeCanvas.transform.GetChild(0).gameObject.SetActive(true);
             TradeCanvas.transform.GetChild(1).gameObject.SetActive(false);
             TradeCanvas.transform.GetChild(2).gameObject.SetActive(false);
+            TradeCanvas.transform.GetChild(3).gameObject.SetActive(false);
         }
         else
         {
             TradeCanvas.transform.GetChild(0).gameObject.SetActive(false);
             TradeCanvas.transform.GetChild(1).gameObject.SetActive(true);
             TradeCanvas.transform.GetChild(2).gameObject.SetActive(true);
+            TradeCanvas.transform.GetChild(3).gameObject.SetActive(true);
         }
     }
 
@@ -305,6 +313,10 @@ public class Dice : MonoBehaviour
         TradeCanvas.gameObject.SetActive(false);
         EndOfTurnCanvas.gameObject.SetActive(true);
         TradePartner = null;
+        GiveList.Clear();
+        WantList.Clear();
+        GiveMoney = 0;
+        WantMoney = 0;
     }
 
     public void OpenSelectPlayerMenu()
@@ -383,6 +395,10 @@ public class Dice : MonoBehaviour
     public void AddToGiveList(GameObject Tile)
     {
         GiveList.Add(Tile);
+    }
+    public void AddToWantList(GameObject Tile)
+    {
+        WantList.Add(Tile);
     }
 
     public void AddGiveMoney(int Amount)

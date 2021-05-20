@@ -22,4 +22,8 @@ public class DisplayPiece : MonoBehaviour
     {
         Dice.GetComponent<Dice>().AddToGiveList(Tile);
     }
+    public void AddToWantList()
+    {
+        Dice.GetComponent<Dice>().AddToWantList(Tile);
+    }
 }

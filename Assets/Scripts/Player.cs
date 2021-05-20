@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
 
     private int TurnsInJail = 0;
 
+    private GameObject Decks = null;
+
     private void Start()
     {
         Location = GameObject.FindGameObjectWithTag("Go");
@@ -34,9 +36,9 @@ public class Player : MonoBehaviour
 
         Players = GameObject.FindGameObjectWithTag("Players");
 
-        transform.GetChild(0).gameObject.SetActive(false);
+        Decks = GameObject.FindGameObjectWithTag("Decks");
 
-        StartTurn();
+        transform.GetChild(0).gameObject.SetActive(false);
     }
 
     public void Update()
@@ -165,7 +167,41 @@ public class Player : MonoBehaviour
             NewTile -= NumTiles;
         }
 
-        StartCoroutine(Moving(.2f, CurTile, NumTiles, NewTile));
+        StartCoroutine(Moving(0.2f, CurTile, NumTiles, NewTile));
+
+        return;
+    }
+
+    public void MoveTo(GameObject NewLocation) 
+    {
+        int NumTiles = Board.transform.childCount;
+
+        int CurTile = -1;
+
+        int NewTile = -1;
+
+        for (int i = 0; i < NumTiles && CurTile < 0; i++)
+        {
+            if (Board.transform.GetChild(i).gameObject == Location.gameObject)
+            {
+                CurTile = i;
+            }
+        }
+
+        for (int i = 0; i < NumTiles && NewTile < 0; i++)
+        {
+            if (Board.transform.GetChild(i).gameObject == NewLocation.gameObject)
+            {
+                NewTile = i;
+            }
+        }
+
+        if (NewTile >= NumTiles)
+        {
+            NewTile -= NumTiles;
+        }
+
+        StartCoroutine(Moving(.05f, CurTile, NumTiles, NewTile));
 
         return;
     }
@@ -323,5 +359,10 @@ public class Player : MonoBehaviour
         Player.GetComponent<Player>().AddMoney(Money);
         EndTurn();
         Destroy(gameObject);
+    }
+
+    public void DrawCard(int Deck)
+    {
+        Decks.transform.GetChild(Deck).GetChild(0).GetComponent<Card>().DrawCard(gameObject);
     }
 }
