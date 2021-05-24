@@ -118,7 +118,7 @@ public class Tile : MonoBehaviour
                     else if (NumHotels == 0)
                     {
                         //charge equal to HousePrices[NumHouses]
-                        ChargeAmount = HousePrices[NumHouses];
+                        ChargeAmount = HousePrices[NumHouses - 1];
                     }
                     else //hotel
                     {

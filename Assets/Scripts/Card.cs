@@ -212,25 +212,6 @@ public class Card : MonoBehaviour
         }
     }
 
-    /*
-                    case 0:
-                        Player.GetComponent<Player>().MoveTo(GameObject.FindGameObjectWithTag("Go"));
-                        break;
-                    case 1:
-                        Dice.GetComponent<Dice>().ChargePlayerToBank(Player, 20, GetMessage());
-                        break;
-                    case 2:
-                        Player.GetComponent<Player>().AddMoney(30);
-                        Player.GetComponent<Player>().PostMove();
-                        break;
-                    default:
-                        //Not a valid card
-                        Player.GetComponent<Player>().PostMove();
-                        break;
-
-    */
-
-
     public string GetMessage()
     {
         string Message = "";
