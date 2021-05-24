@@ -406,11 +406,25 @@ public class Dice : MonoBehaviour
 
     public void AddToGiveList(GameObject Tile)
     {
-        GiveList.Add(Tile);
+        if (GiveList.Contains(Tile))
+        {
+            GiveList.Remove(Tile);
+        }
+        else
+        {
+            GiveList.Add(Tile);
+        }
     }
     public void AddToWantList(GameObject Tile)
     {
-        WantList.Add(Tile);
+        if (WantList.Contains(Tile))
+        {
+            WantList.Remove(Tile);
+        }
+        else
+        {
+            WantList.Add(Tile);
+        }
     }
 
     public void AddGiveMoney(int Amount)

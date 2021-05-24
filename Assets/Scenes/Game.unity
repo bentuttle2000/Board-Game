@@ -837,7 +837,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 25366348}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2947,7 +2947,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 121129651}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3153,7 +3153,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 122653325}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3656,7 +3656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aca84385bf59b743b7cc14915c841b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckType: 0
+  DeckType: 1
   ID: 4
 --- !u!1 &154003216
 GameObject:
@@ -5646,7 +5646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aca84385bf59b743b7cc14915c841b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckType: 0
+  DeckType: 1
   ID: 6
 --- !u!1 &208104322
 GameObject:
@@ -5786,7 +5786,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 209452757}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5929,7 +5929,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 210645658}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6663,7 +6663,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 233161435}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7160,7 +7160,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 240591405}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8122,7 +8122,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 275381800}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8475,7 +8475,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 607430431}
+      - m_Target: {fileID: 286198138}
         m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
@@ -8754,7 +8754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aca84385bf59b743b7cc14915c841b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckType: 0
+  DeckType: 1
   ID: 5
 --- !u!1 &300941905
 GameObject:
@@ -8872,7 +8872,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 310430729}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9369,7 +9369,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 338090354}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10458,7 +10458,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 405578234}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10812,7 +10812,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 408446878}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11197,7 +11197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aca84385bf59b743b7cc14915c841b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckType: 0
+  DeckType: 1
   ID: 1
 --- !u!1 &421408028
 GameObject:
@@ -11541,7 +11541,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1939680198}
+      - m_Target: {fileID: 429184064}
         m_MethodName: AddToGiveList
         m_Mode: 1
         m_Arguments:
@@ -12684,7 +12684,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 460063516}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15738,7 +15738,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 610597046}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15841,7 +15841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aca84385bf59b743b7cc14915c841b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckType: 0
+  DeckType: 1
   ID: 13
 --- !u!1 &620722828
 GameObject:
@@ -17043,7 +17043,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 640714592}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18048,7 +18048,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 672262341}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20095,7 +20095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aca84385bf59b743b7cc14915c841b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckType: 0
+  DeckType: 1
   ID: 3
 --- !u!1 &760529152
 GameObject:
@@ -21371,7 +21371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aca84385bf59b743b7cc14915c841b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckType: 0
+  DeckType: 1
   ID: 14
 --- !u!1 &800728873
 GameObject:
@@ -21516,7 +21516,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 802399971}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22460,7 +22460,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 820197496}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24211,7 +24211,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 850598996}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29153,7 +29153,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1081566775}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30641,7 +30641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aca84385bf59b743b7cc14915c841b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckType: 0
+  DeckType: 1
   ID: 0
 --- !u!1 &1146131703
 GameObject:
@@ -31564,7 +31564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aca84385bf59b743b7cc14915c841b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckType: 0
+  DeckType: 1
   ID: 7
 --- !u!1 &1178078132
 GameObject:
@@ -31654,7 +31654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aca84385bf59b743b7cc14915c841b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckType: 0
+  DeckType: 1
   ID: 10
 --- !u!1 &1191036245
 GameObject:
@@ -32573,7 +32573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aca84385bf59b743b7cc14915c841b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckType: 0
+  DeckType: 1
   ID: 11
 --- !u!1 &1230989774
 GameObject:
@@ -34102,7 +34102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aca84385bf59b743b7cc14915c841b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckType: 0
+  DeckType: 1
   ID: 12
 --- !u!1 &1275641590
 GameObject:
@@ -35705,7 +35705,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1208823538}
+      - m_Target: {fileID: 1326804732}
         m_MethodName: AddToGiveList
         m_Mode: 1
         m_Arguments:
@@ -39024,7 +39024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aca84385bf59b743b7cc14915c841b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckType: 0
+  DeckType: 1
   ID: 2
 --- !u!1 &1434719342
 GameObject:
@@ -39732,7 +39732,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1459546991}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -43770,7 +43770,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1607207635}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -48754,7 +48754,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1824458843}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -49570,8 +49570,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 310430729}
-        m_MethodName: AddToGiveList
+      - m_Target: {fileID: 1840323242}
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -50401,7 +50401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aca84385bf59b743b7cc14915c841b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckType: 0
+  DeckType: 1
   ID: 8
 --- !u!1 &1868923961
 GameObject:
@@ -51096,7 +51096,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1896333171}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -51239,7 +51239,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1901974001}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -53257,7 +53257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aca84385bf59b743b7cc14915c841b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckType: 0
+  DeckType: 1
   ID: 9
 --- !u!1 &1993402826
 GameObject:
@@ -54806,7 +54806,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2034291759}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -55125,7 +55125,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2061235993}
-        m_MethodName: AddToGiveList
+        m_MethodName: AddToWantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

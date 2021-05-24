@@ -222,6 +222,7 @@ public class Player : MonoBehaviour
     public void GoBackSpaces(int NumSpaces)
     {
         Location = Board.transform.GetChild(GetLocationAsInt() - NumSpaces).gameObject;
+        LandedOn();
     }
 
     IEnumerator Moving(float Sec, int CurTile, int NumTiles, int NewTile)
