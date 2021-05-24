@@ -18,6 +18,7 @@ public class Dice : MonoBehaviour
     public Canvas SelectPlayerCanvas;
     public Canvas SelectGiveCanvas;
     public Canvas SelectWantCanvas;
+    public Canvas ResolveCardCanvas;
 
     private GameObject PlayersTurn;
     private GameObject CurrentProperty;
@@ -39,12 +40,17 @@ public class Dice : MonoBehaviour
     private int GiveMoney = 0;
     private int WantMoney = 0;
 
+    //Card stuff
+    private GameObject Decks;
+    private int CurrentDeck = 0;
+
 
     private void Start()
     {
         transform.GetChild(0).GetComponent<Animator>().SetInteger("Dice", 1);
         transform.GetChild(1).GetComponent<Animator>().SetInteger("Dice", 1);
         Players = GameObject.FindGameObjectWithTag("Players");
+        Decks = GameObject.FindGameObjectWithTag("Decks");
     }
 
     private void Update()
@@ -148,6 +154,7 @@ public class Dice : MonoBehaviour
         SelectPlayerCanvas.gameObject.SetActive(false);
         SelectGiveCanvas.gameObject.SetActive(false);
         SelectWantCanvas.gameObject.SetActive(false);
+        ResolveCardCanvas.gameObject.SetActive(false);
 
         NumDoubles = 0;
         Again = false;
@@ -226,6 +233,8 @@ public class Dice : MonoBehaviour
 
         ChargePlayerCanvas.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = Message;
 
+        ChargePlayerCanvas.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Make Payment";
+
         MakePaymentFrom = PlayerFrom;
         MakePaymentTo = PlayerTo;
         MakePaymentAmount = Amount;
@@ -237,10 +246,13 @@ public class Dice : MonoBehaviour
 
         ChargePlayerCanvas.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = Message;
 
+        ChargePlayerCanvas.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = "Make Payment";
+
         MakePaymentFrom = PlayerFrom;
         MakePaymentTo = null;
         MakePaymentAmount = Amount;
     }
+
 
     public void PayCharge()
     {
@@ -474,6 +486,11 @@ public class Dice : MonoBehaviour
 
     public void OpenManagePropertyMenu(GameObject Property)
     {
+        if (BuyPropertyCanvas.gameObject.activeInHierarchy || ResolveCardCanvas.gameObject.activeInHierarchy || TradeDisplayCanvas.gameObject.activeInHierarchy)
+        {
+            return; //can not manage properties while doing other things
+        }
+
         ManagePropertyCanvas.gameObject.SetActive(true);
         DisplayPropertyMenu(ManagePropertyCanvas, Property);
         CurrentProperty = Property;
@@ -619,4 +636,32 @@ public class Dice : MonoBehaviour
             MakePaymentFrom.GetComponent<Player>().GoBankruptToPlayer(MakePaymentTo);
         }
     }
+
+    public void ResolveCard(int DeckNum)
+    {
+        CurrentDeck = DeckNum;
+        GameObject ResolveCard = null;
+
+        ResolveCard = Decks.transform.GetChild(CurrentDeck).GetChild(0).gameObject;
+
+        ResolveCardCanvas.gameObject.SetActive(true);
+        ResolveCardCanvas.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = ResolveCard.GetComponent<Card>().GetMessage();
+    }
+
+    public void ResolveCardEffect()
+    {
+        GameObject ResolveCard = null;
+
+        ResolveCard = Decks.transform.GetChild(CurrentDeck).GetChild(0).gameObject;
+
+        if (ResolveCard == null)
+        {
+            print("Error");
+            return;
+        }
+
+        ResolveCard.GetComponent<Card>().Effect(PlayersTurn);
+        ResolveCardCanvas.gameObject.SetActive(false);
+    }
+
 }

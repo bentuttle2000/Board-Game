@@ -355,4 +355,18 @@ public class Tile : MonoBehaviour
         NumHotels = 0;
         Owner = null;
     }
+
+    public int GetRepairCost()
+    {
+        int Price = 0;
+        if (NumHotels == 1)
+        {
+            Price = 100;
+        }
+        else
+        {
+            Price = NumHouses * 25;
+        }
+        return Price;
+    }
 }
