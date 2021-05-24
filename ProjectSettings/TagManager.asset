@@ -12,6 +12,15 @@ TagManager:
   - VisitingJail
   - FreeParking
   - Decks
+  - Red3
+  - Pink1
+  - Utility1
+  - Utility2
+  - RR1
+  - RR2
+  - RR3
+  - RR4
+  - DBlue2
   layers:
   - Default
   - TransparentFX

@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
 
     private int TurnsInJail = 0;
 
+    private GameObject Decks = null;
+
     private void Start()
     {
         Location = GameObject.FindGameObjectWithTag("Go");
@@ -34,9 +36,9 @@ public class Player : MonoBehaviour
 
         Players = GameObject.FindGameObjectWithTag("Players");
 
-        transform.GetChild(0).gameObject.SetActive(false);
+        Decks = GameObject.FindGameObjectWithTag("Decks");
 
-        StartTurn();
+        transform.GetChild(0).gameObject.SetActive(false);
     }
 
     public void Update()
@@ -112,6 +114,19 @@ public class Player : MonoBehaviour
         return Location;
     }
 
+    public int GetLocationAsInt()
+    {
+        int CurTile = -1;
+        for (int i = 0; i < Board.transform.childCount && CurTile < 0; i++)
+        {
+            if (Board.transform.GetChild(i).gameObject == Location.gameObject)
+            {
+                CurTile = i;
+            }
+        }
+        return CurTile;
+    }
+
     public void SetLocation(GameObject NewLocation)
     {
         Location = NewLocation;
@@ -165,9 +180,48 @@ public class Player : MonoBehaviour
             NewTile -= NumTiles;
         }
 
-        StartCoroutine(Moving(.2f, CurTile, NumTiles, NewTile));
+        StartCoroutine(Moving(0.2f, CurTile, NumTiles, NewTile));
 
         return;
+    }
+
+    public void MoveTo(GameObject NewLocation) 
+    {
+        int NumTiles = Board.transform.childCount;
+
+        int CurTile = -1;
+
+        int NewTile = -1;
+
+        for (int i = 0; i < NumTiles && CurTile < 0; i++)
+        {
+            if (Board.transform.GetChild(i).gameObject == Location.gameObject)
+            {
+                CurTile = i;
+            }
+        }
+
+        for (int i = 0; i < NumTiles && NewTile < 0; i++)
+        {
+            if (Board.transform.GetChild(i).gameObject == NewLocation.gameObject)
+            {
+                NewTile = i;
+            }
+        }
+
+        if (NewTile >= NumTiles)
+        {
+            NewTile -= NumTiles;
+        }
+
+        StartCoroutine(Moving(.05f, CurTile, NumTiles, NewTile));
+
+        return;
+    }
+
+    public void GoBackSpaces(int NumSpaces)
+    {
+        Location = Board.transform.GetChild(GetLocationAsInt() - NumSpaces).gameObject;
     }
 
     IEnumerator Moving(float Sec, int CurTile, int NumTiles, int NewTile)
@@ -323,5 +377,23 @@ public class Player : MonoBehaviour
         Player.GetComponent<Player>().AddMoney(Money);
         EndTurn();
         Destroy(gameObject);
+    }
+
+    public void DrawCard(int Deck)
+    {
+        Decks.transform.GetChild(Deck).GetChild(0).GetComponent<Card>().DrawCard(gameObject);
+    }
+
+    public void PayHouseRepairs()
+    {
+        int Price = 0;
+        for (int i = 0; i < 28; i++)
+        {
+            if (transform.GetChild(0).GetChild(3).GetChild(i).GetComponent<DisplayPiece>().Tile.GetComponent<Tile>().GetOwner() == this.gameObject)
+            {
+                Price += transform.GetChild(0).GetChild(3).GetChild(i).GetComponent<DisplayPiece>().Tile.GetComponent<Tile>().GetRepairCost();
+            }
+        }
+        Dice.GetComponent<Dice>().ChargePlayerToBank(gameObject, Price, "Home Repair Cost: " + Price);
     }
 }

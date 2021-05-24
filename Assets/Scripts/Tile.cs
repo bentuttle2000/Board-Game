@@ -199,12 +199,13 @@ public class Tile : MonoBehaviour
                 if (DrawType == DrawTypes.Chance)
                 {
                     //draw chance
+                    Player.GetComponent<Player>().DrawCard(0);
                 }
                 else
                 {
                     //draw community chest
+                    Player.GetComponent<Player>().DrawCard(1);
                 }
-                Player.GetComponent<Player>().PostMove(); //move this later
                 break;
             case Types.Tax:
                 //charge player tax amount
@@ -353,5 +354,19 @@ public class Tile : MonoBehaviour
         NumHouses = 0;
         NumHotels = 0;
         Owner = null;
+    }
+
+    public int GetRepairCost()
+    {
+        int Price = 0;
+        if (NumHotels == 1)
+        {
+            Price = 100;
+        }
+        else
+        {
+            Price = NumHouses * 25;
+        }
+        return Price;
     }
 }
